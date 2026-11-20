@@ -169,7 +169,7 @@ Etusivu, kori ja agentin jälki on kuvattu 17.11.2026 julkiselta demosivustolta 
 
 ## Tausta
 
-Tilausapuri sai alkunsa Junction 2026 -hackathonissa 13.–15.11.2026, jossa teimme tiimin kanssa Valion haasteeseen ensimmäisen prototyypin, aimo-ain. Sen jälkeen olen kehittänyt tilausapurin itse tässä repossa: Claude-agentin, pilviajon Vercelissä, WhatsApp-polun ääniviesteineen ja kuvineen sekä korisivun ja maksun.
+Tilausapuri sai alkunsa Junction 2026 -hackathonissa 13.–15.11.2026, jossa teimme tiimin kanssa Valion haasteeseen ensimmäisen prototyypin, aimo-ain. Sen jälkeen olen kehittänyt tilausapuria itse, ensin aimo-aissa ja 17.11. alkaen tässä repossa. Täällä syntyivät esimerkiksi Claude-agentti työkaluineen, viestien niputus ja maksun jälkeinen kiitosviesti WhatsAppiin.
 
 ## Tekijät
 
