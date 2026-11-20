@@ -7,7 +7,9 @@ sovitaan käytöstä erikseen. Luvaton käyttö voi johtaa sakkoihin.
 Eelis Puro muokkaa ohjelmistoa vielä mielellään Valion mieltymysten mukaisesti,
 ja siitä sovitaan erikseen! :-)
 
-Tausta: Valio Aimo -tilausapuri sai alkunsa aimo-aista
-(https://github.com/eeputti/aimo-ai). Se oli Eelis Puron ja hänen Junction 2026
--tiiminsä yhteinen idea ja ensimmäinen prototyyppi. Eelis Puro jatkokehitti
-tilausapuria Junctionin jälkeen ensin aimo-aissa ja 17.11.2026 alkaen tässä repossa. Tämän repon koodi on kuitenkin täysin Eelis Puron kirjoittamaa.
+Tausta: Valio Aimo -tilausapuri on jatkokehitetty Junction 2026 -hackathonin
+aikana syntyneestä ideasta (https://github.com/eeputti/aimo-ai). Hackathonissa
+apuria ei saatu kunnolla toimimaan, kun aika loppui ja väsymys iski kesken
+kaiken. Sen jälkeen Eelis Puro kehitti aimo-aita, sai apurin toimimaan ja
+17.11.2026 alkaen on työstänyt tätä repoa. Tämän repon koodi on täysin Eelis
+Puron kirjoittamaa.
