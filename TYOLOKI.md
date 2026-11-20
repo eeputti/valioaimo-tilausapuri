@@ -11,6 +11,7 @@ salaisuuksia tai koko keskusteluhistoriaa.
 - **README (Eelis: "Korjaa README"):** Tausta kertoo nyt, että kehitys jatkui ensin aimo-aissa ja 17.11. alkaen täällä. Esimerkkeinä tämän repon työstä Claude-agentti, viestien niputus ja maksun jälkeinen kiitosviesti, jotka kaikki tehtiin täällä. Prototyyppi mainitaan yhä vain kerran.
 - **Eeliksen oma muokkaus GitHubissa (17aa725):** viimeinen virke on nyt "Tämän repon koodi on kuitenkin täysin Eelis Puron kirjoittamaa." Maininta tiimiläisten koodin uudelleenkirjoituksesta poistui.
 - **Eeliksen tarkennus:** Tausta kirjoitettu hänen sanoillaan: idea syntyi hackathonissa, apuria ei saatu siellä kunnolla toimimaan, Eelis sai sen toimimaan aimo-aissa ja on työstänyt tätä repoa 17.11. alkaen.
+- **README (Eelis: "Sama teksti READMEen"):** Tausta kertoo saman minä-muodossa. Aiempi esimerkkilista (Claude-agentti, niputus, kiitosviesti) poistui.
 - **Tarkistukset:** vain LICENSE ja tämä loki muuttuivat. `git diff --check` läpi.
 
 ## 20.11.2026 — pienet siistimiset juuren asetustiedostoihin (Claude Code)
