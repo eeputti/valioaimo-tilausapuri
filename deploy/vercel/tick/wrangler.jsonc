@@ -1,0 +1,11 @@
+{
+  "$schema": "../../cloudflare/node_modules/wrangler/config-schema.json",
+  "name": "aimo-whatsapp-tick",
+  "main": "worker.mjs",
+  "account_id": "41cfacacd7c70bbcf80372ab540dd974",
+  "compatibility_date": "2026-11-14",
+  "workers_dev": false,
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": true }
+  // TICK_URL ja TICK_SECRET asetetaan salaisuuksina: wrangler secret put TICK_URL / TICK_SECRET
+}
