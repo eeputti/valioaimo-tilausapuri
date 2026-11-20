@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valio Aimo Tilausapuri</title>
+<link rel="icon" type="image/png" href="/demo/logo.png">
+<style>
+  /* Paikallinen varademo: sama tilauskeskustelu kuin WhatsAppissa, puhelimen kokoisessa kehyksessä. */
+  :root {
+    --brand: #005670; --page: #ece6f3; --sent: #d9f2e4; --text: #0f2a33; --soft: #6b797d;
+    --border: #dfe6e9; --done: #1a7f37; --warn: #fff4d6; --paper: #f4f1ea;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { display: flex; align-items: center; justify-content: center; background: var(--page); color: var(--text);
+    font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .frame { display: flex; flex-direction: column; width: min(440px, 100vw); height: min(860px, 100dvh); overflow: hidden; background: var(--paper); }
+  @media (min-width: 480px) {
+    .frame { border: 8px solid #10242b; border-radius: 28px; box-shadow: 0 18px 60px rgba(0, 86, 112, .28); }
+  }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--brand); color: #fff; }
+  .logo { flex: none; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0 4px;
+    border-radius: 50%; overflow: hidden; background: #fff; color: var(--brand); font-size: 13px; font-weight: 800; }
+  .logo img { display: block; width: 100%; height: auto; }
+  .who strong { display: block; font-size: 16px; }
+  .who span { font-size: 12px; opacity: .8; }
+  .restart { margin-left: auto; padding: 8px; border: 0; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+  .restart:hover { background: rgba(255, 255, 255, .15); }
+  .thread { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 14px 12px 6px; overflow-y: auto; }
+  .bubble { max-width: 88%; padding: 8px 11px 6px; border-radius: 12px; font-size: 14.5px; line-height: 1.38;
+    white-space: pre-wrap; overflow-wrap: anywhere; box-shadow: 0 1px 1px rgba(0, 0, 0, .08); }
+  .bubble.bot { align-self: flex-start; background: #fff; border-top-left-radius: 3px; }
+  .bubble.me { align-self: flex-end; background: var(--sent); border-top-right-radius: 3px; }
+  .bubble.order { border-left: 4px solid var(--done); }
+  .bubble.error { background: var(--warn); }
+  .bubble .stamp { display: block; margin-top: 2px; text-align: right; font-size: 11px; color: var(--soft); }
+  .bubble.intro strong { color: var(--brand); }
+  .bubble.intro .hint { display: block; margin-top: 4px; color: var(--soft); }
+  .datechip { align-self: center; padding: 4px 10px; border-radius: 8px; background: #fff; color: var(--soft); font-size: 12px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .06); }
+  .dots { align-self: flex-start; display: flex; gap: 5px; padding: 12px 14px; border-radius: 12px; background: #fff; }
+  .dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--soft); animation: pulse 1.2s infinite; }
+  .dots span:nth-child(2) { animation-delay: .2s; }
+  .dots span:nth-child(3) { animation-delay: .4s; }
+  @keyframes pulse { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+  .quick { display: flex; gap: 8px; padding: 6px 12px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .quick::-webkit-scrollbar { display: none; }
+  .quick button { flex: none; padding: 6px 12px; border: 1px solid var(--brand); border-radius: 16px; background: #fff; color: var(--brand);
+    font: inherit; font-size: 13px; cursor: pointer; }
+  .quick button:hover { background: var(--page); }
+  /* Rivi jatkuu reunan yli: reuna häivytetään, jotta piilossa olevat vaihtoehdot huomaa. */
+  .quick.more-left { -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%); mask-image: linear-gradient(90deg, transparent, #000 15%); }
+  .quick.more-right { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  .quick.more-left.more-right {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .quick { cursor: grab; scrollbar-width: thin; scrollbar-color: rgba(0, 86, 112, .35) transparent; }
+    .quick::-webkit-scrollbar { display: block; height: 6px; }
+    .quick::-webkit-scrollbar-thumb { border-radius: 3px; background: rgba(0, 86, 112, .35); }
+    .quick.grabbing { cursor: grabbing; user-select: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .dots span { animation: none; } }
+  .composer { display: flex; gap: 8px; padding: 8px 10px 12px; }
+  .composer textarea { flex: 1; height: 42px; max-height: 120px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 20px;
+    outline: none; resize: none; font: inherit; font-size: 15px; }
+  .composer textarea:focus { border-color: var(--brand); }
+  .composer button { flex: none; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px;
+    border: 0; border-radius: 50%; background: var(--brand); color: #fff; cursor: pointer; }
+  .composer button:disabled { cursor: default; opacity: .45; }
+</style>
+</head>
+<body>
+<main class="frame">
+  <header class="bar">
+    <div class="logo" id="logo" aria-hidden="true"><img src="/demo/logo.png" alt=""></div>
+    <div class="who"><strong>Valio Aimo Tilausapuri</strong><span>Demo, oikeaa tilausta ei lähetetä</span></div>
+    <button type="button" class="restart" id="restart" title="Aloita alusta" aria-label="Aloita alusta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>
+      </svg>
+    </button>
+  </header>
+  <section class="thread" id="thread" aria-live="polite"></section>
+  <nav class="quick" id="quick" aria-label="Pikavastaukset"></nav>
+  <form class="composer" id="composer">
+    <textarea id="message" rows="1" placeholder="Kirjoita viesti" aria-label="Viesti"></textarea>
+    <button type="submit" id="submit" aria-label="Lähetä">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5v6.6L15 12 3 13.9z"/></svg>
+    </button>
+  </form>
+</main>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const thread = $('thread'); const quick = $('quick'); const field = $('message'); const submit = $('submit');
+
+  // Pikavastaukset vain täyttävät viestin: palvelin saa saman tekstin kuin käsin kirjoitettuna.
+  const OPENERS = ['20 l maitoa ja 5 l kermaa maanantaiksi', '100 kananmunaa ja 10 kg voita maanantaiksi',
+    'nyt tarvii 1000 litraa maitoo ku on juhlat maanantaina'];
+  const FOLLOW_UPS = new Map([
+    ['collecting', ['ei allergioita', 'laktoositon', 'maanantaiksi']],
+    ['choosing', ['1', '1 1', '2 1']],
+    ['ready', ['TILAA', 'maitoa 30 litraa', 'näytä']],
+  ]);
+  const ORDER_STATES = new Set(['confirmed', 'pending_approval']);
+  let working = false;
+
+  // Logo puuttuu: avatar näyttää tekstin.
+  const logoImage = $('logo').querySelector('img');
+  const useTextLogo = () => { if (logoImage.isConnected) logoImage.replaceWith('aimo'); };
+  if (logoImage.complete && logoImage.naturalWidth === 0) useTextLogo();
+  else logoImage.addEventListener('error', useTextLogo, { once: true });
+
+  const now = () => new Date().toLocaleTimeString('fi-FI', { hour: '2-digit', minute: '2-digit' });
+  const ENTITIES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
+  const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (ch) => ENTITIES[ch]);
+  // WhatsAppin *lihavointi* näytetään lihavoituna. Muu teksti on aina escapattu.
+  const format = (value) => escapeHtml(value).replace(/\*([^*\n]+)\*/g, '<strong>$1</strong>');
+
+  function scrollDown() { thread.scrollTop = thread.scrollHeight; }
+  function addBubble(text, { mine = false, kind = '', note = '' } = {}) {
+    const node = document.createElement('div');
+    node.className = ['bubble', mine ? 'me' : 'bot', kind].filter(Boolean).join(' ');
+    const stamp = note ? `${now()}, ${escapeHtml(note)}` : now();
+    node.innerHTML = `${format(text)}<span class="stamp">${stamp}</span>`;
+    thread.append(node); scrollDown();
+    return node;
+  }
+  function showTyping() {
+    const node = document.createElement('div');
+    node.className = 'dots';
+    node.append(...Array.from({ length: 3 }, () => document.createElement('span')));
+    thread.append(node); scrollDown();
+    return node;
+  }
+  // Alkunäkymä tulee sivulta itseltään: se ei kutsu palvelinta eikä mallia.
+  function showIntro() {
+    const date = document.createElement('div');
+    date.className = 'datechip'; date.textContent = 'Tänään';
+    const intro = document.createElement('div');
+    intro.className = 'bubble bot intro';
+    intro.innerHTML = '<strong>Moi! Olen Aimo-tilausapuri.</strong>\n'
+      + 'Kerro mitä keittiöön tarvitaan ja mille päivälle, niin kokoan ostoslistan ja ehdotan sopivat tuotteet. '
+      + 'Tilaus lähtee vasta, kun vahvistat sen sanalla <strong>TILAA</strong>.'
+      + `<span class="hint">Esim. 20 l maitoa ja 5 kg voita maanantaiksi</span><span class="stamp">${now()}</span>`;
+    thread.replaceChildren(date, intro);
+  }
+
+  function updateEdges() {
+    const hidden = quick.scrollWidth - quick.clientWidth;
+    quick.classList.toggle('more-left', quick.scrollLeft > 2);
+    quick.classList.toggle('more-right', hidden - quick.scrollLeft > 2);
+  }
+  function offer(replies) {
+    const buttons = replies.map((label) => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.textContent = label;
+      button.addEventListener('click', () => send(label));
+      return button;
+    });
+    quick.replaceChildren(...buttons);
+    quick.scrollLeft = 0; updateEdges();
+  }
+  const repliesFor = (status) => FOLLOW_UPS.get(status) || OPENERS;
+
+  // Hiirellä pikavastausrivi vierii myös rullan pystyliikkeellä ja raahaamalla.
+  const overflowing = () => quick.scrollWidth > quick.clientWidth;
+  quick.addEventListener('scroll', updateEdges, { passive: true });
+  window.addEventListener('resize', updateEdges);
+  function wheelSideways(event) {
+    if (!overflowing() || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+    event.preventDefault();
+    // Rivitilassa (deltaMode 1) yksi rullan pykälä on noin 16 pikseliä.
+    quick.scrollLeft += event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+  }
+  quick.addEventListener('wheel', wheelSideways, { passive: false });
+  let grab = null;
+  quick.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse' && event.button === 0 && overflowing()) {
+      grab = { pointer: event.pointerId, startX: event.clientX, startLeft: quick.scrollLeft, dragging: false };
+    }
+  });
+  quick.addEventListener('pointermove', (event) => {
+    if (!grab || grab.pointer !== event.pointerId) return;
+    const shift = event.clientX - grab.startX;
+    if (!grab.dragging) {
+      if (Math.abs(shift) < 5) return;
+      grab.dragging = true;
+      quick.classList.add('grabbing');
+      quick.setPointerCapture(event.pointerId);
+    }
+    quick.scrollLeft = grab.startLeft - shift;
+  });
+  function releaseGrab() {
+    if (!grab) return;
+    // Raahauksen lopettava vapautus ei saa lähettää pikavastausta.
+    if (grab.dragging) {
+      const swallow = (event) => { event.preventDefault(); event.stopPropagation(); };
+      quick.addEventListener('click', swallow, { capture: true, once: true });
+    }
+    quick.classList.remove('grabbing');
+    grab = null;
+  }
+  quick.addEventListener('pointerup', releaseGrab);
+  quick.addEventListener('pointercancel', releaseGrab);
+
+  const postChat = (text) => fetch('/demo/chat', {
+    method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text }),
+  });
+  function lock(on) {
+    working = on; submit.disabled = on;
+    if (!on) field.focus();
+  }
+
+  async function send(raw) {
+    const text = String(raw).trim();
+    if (working || !text) return;
+    lock(true);
+    field.value = ''; field.style.height = '';
+    addBubble(text, { mine: true });
+    const typing = showTyping();
+    try {
+      const response = await postChat(text);
+      const data = await response.json();
+      typing.remove();
+      if (response.ok) {
+        const seconds = `${(data.ms / 1000).toFixed(1).replace('.', ',')} s`;
+        addBubble(data.text, { kind: ORDER_STATES.has(data.status) ? 'order' : '', note: seconds });
+        offer(repliesFor(data.status));
+      } else {
+        addBubble(data.error || 'Viestin käsittely ei onnistunut.', { kind: 'error' });
+      }
+    } catch {
+      typing.remove();
+      addBubble('Yhteys palvelimeen katkesi. Viestiä ei käsitelty.', { kind: 'error' });
+    } finally {
+      lock(false);
+    }
+  }
+
+  // Aloita alusta lähettää palvelimelle saman peruutuksen kuin ennen, mutta näkymä palaa alkuun ilman nollausvuoroa.
+  async function restart() {
+    if (working) return;
+    lock(true);
+    showIntro(); offer(OPENERS);
+    try {
+      const response = await postChat('peru');
+      if (!response.ok) addBubble('Alusta aloitus ei onnistunut. Edellinen luonnos voi olla yhä voimassa.', { kind: 'error' });
+    } catch {
+      addBubble('Yhteys palvelimeen katkesi. Edellinen luonnos voi olla yhä voimassa.', { kind: 'error' });
+    } finally {
+      lock(false);
+    }
+  }
+
+  $('composer').addEventListener('submit', (event) => { event.preventDefault(); send(field.value); });
+  field.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' || event.shiftKey) return;
+    event.preventDefault(); send(field.value);
+  });
+  field.addEventListener('input', () => {
+    field.style.height = '';
+    field.style.height = `${Math.min(field.scrollHeight, 120)}px`;
+  });
+  $('restart').addEventListener('click', restart);
+
+  showIntro(); offer(OPENERS); field.focus();
+})();
+</script>
+</body>
+</html>

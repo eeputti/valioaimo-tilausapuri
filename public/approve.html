@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Tilauksen hyväksyntä | Aimo</title>
+  <script type="module" src="/approve.js"></script>
+  <style>
+    :root { font: 17px/1.5 system-ui, sans-serif; color: #12343b; background: #f4f7f4; }
+    body { margin: 0; padding: 24px 16px; } main { max-width: 700px; margin: 5vh auto; padding: 28px; background: white; border-radius: 16px; }
+    h1 { line-height: 1.2; } li { margin-bottom: 12px; } button { font: inherit; padding: 12px 18px; border: 1px solid #005670; border-radius: 6px; cursor: pointer; margin: 4px; background: white; color: #005670; }
+    #approve { background: #005670; color: white; } button:disabled { opacity: .5; cursor: default; } .actions { margin-top: 24px; } #error { color: #a11; } a { color: #005670; }
+  </style>
+</head>
+<body><main>
+  <p>AIMO TILAUSDEMO</p>
+  <h1>Tilauksen hyväksyntä</h1>
+  <p id="status" role="status">Haetaan tilausta…</p>
+  <section id="order" hidden>
+    <h2 id="number"></h2>
+    <p id="delivery"></p>
+    <ul id="lines" aria-label="Tilauksen tuotteet"></ul>
+    <p id="total"></p>
+    <h3>Tarkistuksen huomiot</h3>
+    <ul id="reasons"></ul>
+    <div class="actions">
+      <button id="approve" type="button" disabled>Hyväksy demotilaus</button>
+      <button id="reject" type="button" disabled>Hylkää demotilaus</button>
+      <button id="refresh" type="button">Päivitä tila</button>
+    </div>
+  </section>
+  <p id="error" role="alert"></p>
+  <p><small>Oikeaa Valio-tilausta tai rahansiirtoa ei tehdä. Hyväksyntä ei ohita tuotteen turvallisuus- tai saatavuustarkistuksia.</small></p>
+  <p><a href="/">Takaisin alkuun</a></p>
+</main></body>
+</html>

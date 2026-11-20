@@ -1,0 +1,5 @@
+#demo-checkout { margin-top: 16px; }
+#demo-checkout p { margin: 0 0 12px; }
+.demo-checkout-link { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; max-width: 100%; min-height: 48px; padding: 12px 20px; border-radius: 4px; background: #00576a; color: #fff; font: inherit; font-weight: 700; text-decoration: none; }
+.demo-checkout-link:hover { background: #00465b; }
+.demo-checkout-link:focus-visible { outline: 3px solid #00576a; outline-offset: 4px; }

@@ -1,0 +1,493 @@
+{
+  "reference": "https://toimitustukku.valioaimo.fi/fi/",
+  "capturedOn": "2026-11-14",
+  "assets": [
+    {
+      "file": "logo.svg",
+      "source": "https://api.valioaimo.fi/medias/aimo-logo.svg?context=bWFzdGVyfGltYWdlc3w1MjcwfGltYWdlL3N2Zyt4bWx8YURKaUwyaG1OeTg0T0Rnek1EWXlNakV3TlRrd0wyRnBiVzlmYkc5bmJ5NXpkbWN8N2IyZThmOTYyMGU3NTZhZDNlOTg3NjBmNjk3ZmY1OTU5NGU1MTM3YjQ2MDEyODY2YzkwNmFmOTBlZWFiYTNiNQ",
+      "bytes": 5270,
+      "sha256": "5cff0719a35a33ce3200acde94420e98809673a1a77f267d84ad7de900a4f366",
+      "mime": "image/svg+xml"
+    },
+    {
+      "file": "Matter-Regular.otf",
+      "source": "https://toimitustukku.valioaimo.fi/fonts/Matter-Regular.otf",
+      "bytes": 60336,
+      "sha256": "f2c3f2290149587342b242ffa5aeed2becf5a53539b05bdc275a87ff49b9e342",
+      "mime": "application/octet-stream"
+    },
+    {
+      "file": "Matter-Bold.otf",
+      "source": "https://toimitustukku.valioaimo.fi/fonts/Matter-Bold.otf",
+      "bytes": 62076,
+      "sha256": "49e28ed5a52e05e365a256e9630206bdffa99ad865bd4053e3b46e8231683cd6",
+      "mime": "application/octet-stream"
+    },
+    {
+      "file": "National2Compressed-Bold.otf",
+      "source": "https://toimitustukku.valioaimo.fi/fonts/National2Compressed-Bold.otf",
+      "bytes": 235724,
+      "sha256": "060b30de1fbe8781f518149e7834622d37a66c934884c29c405c65b3120c343d",
+      "mime": "application/octet-stream"
+    },
+    {
+      "file": "optimized/688127.eeb1e7a1ae30.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTE1MDkwNHxpbWFnZS9qcGVnfGFERTFMMmcwTnk4NU1UWXpPREExTWprME5qSXl8MDgyMjU0MTc4ZTFlMzNhNzBkYTA3NmI1ZGNiNmZjMTkzOWE0ZGNiNjQ1MTA1MDgxNDQ2MjdiYTM3NWFiOTg5Mw",
+      "derivedFrom": "688127.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 18832,
+      "sha256": "eeb1e7a1ae30f0e7f338e234095ef7ae121a4a0761debf56a5263f523d7a61db",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097729.2d444d375e71.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzQyMjIxNnxpbWFnZS9qcGVnfGFHRmxMMmhrTlM4NU1UY3hOalUxTkRVNE9EUTJ8MmY2OTZhMmE5YTI5ODAyMmY5MTg2ZDIxMzA4OWEyNGU3Nzg1YzUyZjdkMWJmNTc5ZGM2OWVhMGUyMDA4NTljMg",
+      "derivedFrom": "8097729.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 15832,
+      "sha256": "2d444d375e71aa097f64ff44ed7ecdc95f288f606d9ce686a8c820e9eba79777",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097345.653a8c401017.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NjI3NzYxfGltYWdlL2pwZWd8YUdSaEwyZzRZaTg1TVRjeE5ETTVOREU1TkRJeXxjYjQ1N2ZhN2VmM2FjMDc5MjllMDVlYjI5Njg5NmM0OTAwYjBmOWI2NzdhM2M3MWY4NDExOTVjMDk4ODdjNzRl",
+      "derivedFrom": "8097345.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 17168,
+      "sha256": "653a8c4010179e4d3ce8566d0e2827d7d7cb094227ae6212f2a24b2350026003",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097326.27e7f11a4e40.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTQwMjM1NDl8aW1hZ2UvcG5nfGFHVmhMMmhpTUM4NU1UY3hORE0yTkRjd016QXl8YzgwNDI0ZWVhZjYxOTJhODdhNWViM2JlZTg5YTg1NWZkMzA2NThlZTIxYTcyMzc5ZjE3Y2EzNmZhMzFjNzgxNw",
+      "derivedFrom": "8097326.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 21166,
+      "sha256": "27e7f11a4e401ab62dd6f8d79248c947f7d3720f2394dc0ff3f9dbb9e91cea15",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/171140.ae17529ccbd4.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzE2Njk1N3xpbWFnZS9wbmd8YUdZMEwyZ3dNeTg1TVRJMk5EZzRPVE15TXpneXw1NjhmZWJiYmUxZDczOWY5N2RjMmZlYWQzMTFkYTliN2Y2YzcyYjg2MGU4ZDhjNzI3ZTgzOWFhMjYxYTMyZDFk",
+      "derivedFrom": "171140.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 8588,
+      "sha256": "ae17529ccbd43156f92700ffde8c3d96e39c295c40643651075f8983fd1f5fe8",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/328955.abe102d7ed5d.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MjE0NjUxOXxpbWFnZS9wbmd8YUdZeUwyZzJOaTg1TVRVeU5qQTRORE0yTWpVMHwzNmYwMWFiNzk2YzUxOTc0N2ZmNDA2ZGU1NzFhYTk3YjlmYTY0N2I4NmMzZWVjYjNlODY3OTQ1ODk5NjVlMTU5",
+      "derivedFrom": "328955.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 19574,
+      "sha256": "abe102d7ed5d228d9f24f6ab0698937c4593db81ee3664319e33b56edd013ef8",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/412924.1a93f067142a.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTE2MDY0NnxpbWFnZS9wbmd8YURKa0wyaGhZUzg1TVRZek56a3lOVEUxTVRBeXxlNDUxNmYwM2U5ODYxZjIyYjE1NzZmYjFjNzQ2ODRjM2E1YWVmNmZjYjJkNjNlNDU1ZGNiYjNkY2FjMGExZmRk",
+      "derivedFrom": "412924.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 12190,
+      "sha256": "1a93f067142ac2388f7e708b28c3df365a18a42574eea1ffee45f47b0c4f5c26",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097726.541f9db177b9.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzQ3NTE1OXxpbWFnZS9wbmd8YURjMkwyZ3hNeTg1TVRjeE5qVXpPVGcwTWpnMnxjMTM3ZjQxNGE4MzdmOThkMzFmOWZiZWEzODJhZjAyMTc5NDE0OTZjYTJlYjYwNzE0MDc4ZTc2OGIyMjA4NTM3",
+      "derivedFrom": "8097726.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 19982,
+      "sha256": "541f9db177b9912229f161238629a6bbe99de5fbf507fb06069c3b3521f9acf5",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8069128.9daf5f953201.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTQ4ODczOXxpbWFnZS9qcGVnfGFETTFMMmd3WXk4NU1UVTBPVEkzTURZM01UWTJ8N2IwYzM0NmJlZmE4YzZkMjkwNzIyYjcwN2ZkZjllYjIzNzAwNjgyNzgzNjY5Y2I3ZjhmNmNjM2MzNDVlMzU1OA",
+      "derivedFrom": "8069128.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 9174,
+      "sha256": "9daf5f9532012a15089782d31ccdf575cbf50f86a7c44d0989c80534d3bb6317",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8092866.57f7bca93dac.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8ODYyNzMyMnxpbWFnZS9wbmd8YURNMUwyaGlaQzg1TVRZM01ERXhNemd4TWpjNHxjNzA2NjhiMDVkYmQ3ZjQxMDExNmMzZjg3NjgzYjFjMzRhZTQ4OWUxNTQ1NGJmZGMyZDZhZDk0NDNmMDI4ZGI2",
+      "derivedFrom": "8092866.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 16220,
+      "sha256": "57f7bca93daccae43383239d848de7887bd5f2ec863ea527029c21f604d2a110",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8096918.233f62878390.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/8096918.jpg?context=bWFzdGVyfHJvb3R8OTIxODUxfGltYWdlL2pwZWd8YURGa0wyZzJZaTg1TURnMU5EUXdOemcyTkRZeUx6Z3dPVFk1TVRndWFuQm58MGQ0Nzk2YzZlY2ZjYWM3MDQ2ZGM2NDZkZTUwZWU3NzRhYjE4YzM2OWUyMDc2MTJlMTVjMTM3OTNiZjJlMDZiOQ",
+      "derivedFrom": "8096918.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 16218,
+      "sha256": "233f628783906403f8bce8108e29ad92e6ea7b1d8b323b25a6745e9d5e43fe01",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8096919.484d96f6c2bf.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/8096919.jpg?context=bWFzdGVyfHJvb3R8ODg0NTE0fGltYWdlL2pwZWd8YURKakwyZzNNUzg1TURnMU5EUXdPVEUzTlRNMEx6Z3dPVFk1TVRrdWFuQm58ZTc0OTIzMTA4Mzc0MmIyNjM4MWJlNzQ0ZjJjMzQ5ZjRmYmUyYTNiMTY1Y2I4MmQ3Njg3YTgzNDE1ZGZmNjE0Mw",
+      "derivedFrom": "8096919.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 16984,
+      "sha256": "484d96f6c2bfed4c31d2fec027a1111bf20728a2dee4b45f23fd4da0881e2270",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8087461.cf96bd8b9df9.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzExNzY4fGltYWdlL2pwZWd8YURrM0wyZzFaaTg1TVRjMk5qY3hOalE1T0RJeXwxNDRlM2JjNDk4OGE4N2E3ZDc2YmNhNGMyYmRkMjc1YjkxYWFhOGY3YzQ2MDU3Njk0MGM3Y2FmZWVhNTZiNWE4",
+      "derivedFrom": "8087461.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 17268,
+      "sha256": "cf96bd8b9df9e268b446c78fac3c000c35e2f4ecd237bc1aef5ff6d2b8736494",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9906609.a00fcb1431be.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-glogi-tumma-kausituote-6491.png",
+      "derivedFrom": "9906609.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 12464,
+      "sha256": "a00fcb1431bef87ab728f8f5a0fbcc93935e716f99f691f93e9a68b15fdf2ad4",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9906601.4d2af7b59631.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-glogi-tumma-sokeroimaton-kausituote-6468.png",
+      "derivedFrom": "9906601.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 13138,
+      "sha256": "4d2af7b596314641e8d722ac799fdad20fb6c6b11b24f928adc869414a60a01a",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8082077.e1c626e2e2ad.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-gluteeniton-tahtitorttu-85334.png",
+      "derivedFrom": "8082077.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 7194,
+      "sha256": "e1c626e2e2ad10734ab4e4995ef1b85a3ee9f85f9a40603e7e1bb39309131a90",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9906610.6a968954fe4b.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-glogi-vaalea-kausituote-6492.png",
+      "derivedFrom": "9906610.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 11732,
+      "sha256": "6a968954fe4be0ecb812b77f605db1c599951784993aacc428acce7e4d3f4737",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8082054.e1e6f4d458a2.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-luumutahti-85922.png",
+      "derivedFrom": "8082054.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 4640,
+      "sha256": "e1e6f4d458a2137fd27f37b103acb2ad855d5d8d6bfe5f6ecefaa52fae338ce4",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8095107.6f14c344aece.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NTA2ODYzN3xpbWFnZS9wbmd8YURJM0wyZzFPQzg1TVRRMk1EZ3dOekl5T1RjMHwwYTQwYTczOTBjNWI4OGQ1ODRhOTJmMDdmOWQwYmUxMzc4NTQ1MzNlZmM0MzQ3NzdiMTFmNmE4MWQ0OGZmNWFh",
+      "derivedFrom": "8095107.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 37508,
+      "sha256": "6f14c344aece0ba9c3750df2233ddfef42489eed15e538d3e95240103cec04e3",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8098264.dd395d368ac9.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8OTkyMTYyfGltYWdlL3BuZ3xhRFpqTDJnMU55ODVNVGN4TnpNMU1qRTJNVFU0fGMyNWQ5NzlmYzYxMmE1M2NmMTYxNGNmMTk1ZDM5ZjFlZjQ5YTMyOTdkZDk5MjJmM2Y4YzU5NDFhNGE3NzIzMzA",
+      "derivedFrom": "8098264.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 22820,
+      "sha256": "dd395d368ac98c91a687915c3b9cc7ac7873d62a547fda1087f94061833130c1",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9999298.c48eb8f2ab09.webp",
+      "source": "https://cdn.s-cloud.fi/v1/w720h720%40_q75/assets/dam-id/2pxkjLtF4k9BfMEhXtj-mQ.webp?clientId=5621",
+      "derivedFrom": "9999298.webp",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 28264,
+      "sha256": "c48eb8f2ab09b990f595168d6c489d670cdf98f3c99707eb927eec28d72df37c",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8076230.e4e978941b71.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NDIxNjg4NnxpbWFnZS9wbmd8YURjeEwyaG1OQzg1TVRVMU16RTVNakF4T0RJeXwwOTY2YzhkZDc0MGY3ZGFhZTI1OTJhMTAzM2Q2NmNiOTFmYjExZTgwMWVjM2ExOGQ5Njk1NDhiMTI4MTE0NTNl",
+      "derivedFrom": "8076230.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 16458,
+      "sha256": "e4e978941b7165d094b7802db3124858df19859157f3f6f102af0847a7bba9e6",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8090955.1cc689505c43.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzE5MTN8aW1hZ2UvanBlZ3xhR0psTDJoa01pODVNVFkxT0RBME5qTTBNVFF5fDRmNmMwYTNmNmIzZDY4ZjFkMmU5NGE2Y2Q4NzI1OTI2NzU1MDczMDNhNDBjMDBiNzI3ZjMyMjY3MWZhOGYyMmY",
+      "derivedFrom": "8090955.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 3726,
+      "sha256": "1cc689505c43f19c22f7cda84a47131da4958b348c9554c06cb7ba0f6ecbec11",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8086334.e1cd53d9e137.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/emarsys-default-image.png?context=bWFzdGVyfHJvb3R8MzU0MnxpbWFnZS9wbmd8YUdabUwyaGxaaTg0T1RVek5URXhPRE0zTnpJMkwyVnRZWEp6ZVhOZlpHVm1ZWFZzZEY5cGJXRm5aUzV3Ym1jfDE4ZGJmYTk5OWUwZTI4MDZlNjM1MmRlMTFhMWNiZDBjM2U3NDZhOWEwMjUyNTU4MjlmZjdjZGMyMWY1M2Q4MmI",
+      "derivedFrom": "8086334.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 1044,
+      "sha256": "e1cd53d9e137b8244d8bd0c29e1fc0e323f5d91f57989f4c981d46510216daae",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/3253.2fe05e024390.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/3253.jpg?context=bWFzdGVyfHJvb3R8NDU1Nzl8aW1hZ2UvanBlZ3xhR1l6TDJoaVlTODRPREV5T1RFeU1UUTROVEV3THpNeU5UTXVhbkJufDAwZDIzMGNlNjRkYzU4YTU4NmNlZmZjOTUzNGM0MGZjYWJjNjM3NjJmNmY0MmRhNmE4NWYyNGFmOTE5Y2Q2NDc",
+      "derivedFrom": "3253.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 8974,
+      "sha256": "2fe05e0243905a3beb75b81134e37f02e937db6122114588668bb947cdaa2b2d",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/2510.5c3f84d1fd86.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NTI1MzQ1fGltYWdlL2pwZWd8YURobUwyaGlaUzg0T0Rjek9ERTJPREUzTmprMHw3YmVmYjM4ZDRmMTBiZTEwOTE1MWRjMjE2MTkwYzlhYzFhZmEzZWFlYTczNzVkNjBjZDgyODc1YzkyZWNjODI3",
+      "derivedFrom": "2510.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 5414,
+      "sha256": "5c3f84d1fd861adb29e4b75ad2832fc4fa64c59188e655722ddb3cda953d02f0",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/2098.e205ea095b35.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzU3MTcyNnxpbWFnZS9qcGVnfGFEUmtMMmd3TXk4NE9EY3pOemt4TmpVeE9EY3d8YmNhMzA5ODdjZGI2MWI4M2VlN2JmYjUxMzliMWU5ZThhYzU4NzIzZTcyMWE2MGRhMmRlMDU0NGEzMTJlOWQ0YQ",
+      "derivedFrom": "2098.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 30314,
+      "sha256": "e205ea095b350b54c13d519a0dc12ddfb26d9458ec35d44543ea0164967fa390",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/3110.022845644d80.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/3110.jpg?context=bWFzdGVyfHJvb3R8MzY4NzV8aW1hZ2UvanBlZ3xhREV6TDJoaU1TODRPREU0T1RrM016azFORGcyTHpNeE1UQXVhbkJufDdjOWI2NWZlNjViMDVhMDJiMTkyYjkxYTY1OGZiMWFiZGI0NDExODg1NTBlNTkxZmM3YTlhZmU5OTJmYzcwMDA",
+      "derivedFrom": "3110.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 7452,
+      "sha256": "022845644d80f23f577232f02e162f8bd2253ec8fd50dc66251f16e8a2c35963",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/2578.98619f7fcf7f.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTgwODV8aW1hZ2UvanBlZ3xhR015TDJnMk15ODRPRGN6T0RNNU9EZzJNelkyfGI1ZDExNDdiZjM1MmI5ZDExYjk3NGNlY2ZiYTM3ODVhNDJkOGQxNTQwYWQ3ZTcwZGQ4MzRjYjllNmVlNjUyYmU",
+      "derivedFrom": "2578.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 8050,
+      "sha256": "98619f7fcf7fada04b32dbfef5fcb76efe014157d5cff6f19824348a341fe340",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/3222.82bd9805f447.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/3222.jpg?context=bWFzdGVyfHJvb3R8Mjk4NTd8aW1hZ2UvanBlZ3xhRGd3TDJobU55ODRPREV5T1RBek9Ea3dPVGMwTHpNeU1qSXVhbkJufDFhYTRkZjQ0NDc0MjlkNzdkOWEwNzhhOThmMzMxNjI1YzBmZjZlZmM3Zjk5YjgyMzQ3M2U4YTFmM2QxN2Y3NWU",
+      "derivedFrom": "3222.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 4390,
+      "sha256": "82bd9805f4473fe847c9c18a7d958b6f01bc520fa3f7cb43c448c6c1b6fa2516",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8067395.434f703805c7.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8ODcwMTk5MXxpbWFnZS9wbmd8YURaakwyaGlPUzg0T0RVMk1URTVPRE0yTnpBeXxhMDA2ZTNkMWE4NjIxNTYxZGM4N2VhNThlNzZhNTI5NGM1MTEwMDFmMzBhMzRhMGNmNTU4OWYzZGYxNjFhZjY4",
+      "derivedFrom": "8067395.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 7836,
+      "sha256": "434f703805c711244c6dbc9d988c20bb1695281c0897df1c218cd18be38a3369",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8069825.f41866175dd7.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8OTUwNzUwfGltYWdlL2pwZWd8YURNMUwyaGlNaTg1TVRVME9UZ3pNell5TlRrd3w4M2QyYThiZDRlN2YzYWMzMTdjMTM5OTIxNzY1MmQ1OTYzMDA3ZmQ0Y2QyM2Q1ZGFmNDlhYTEwZWM2ZmNkMzky",
+      "derivedFrom": "8069825.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 4876,
+      "sha256": "f41866175dd7cb162671be1e33fa8b73602d6ec624ac3a1358104732d453b5a5",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8081949.7925451e86dd.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-kermaviili-laktoositon-14204-800x800.png",
+      "derivedFrom": "8081949.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 11324,
+      "sha256": "7925451e86dd5c4a272cfc384a9f7ab577e8e7c54439e08463d7c69738da8ba2",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9901708.cfd1f766afdc.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NDU5Nzc4fGltYWdlL3BuZ3xhREU0TDJnMVl5ODVNVFUzTWpBeE5qSTFNVEU0fGNiYzhkYjI3Njk5ZWU0NWQzYzc0NmM1ODFmYjY4ZTgzYmY3YzdhYWIwYmVjYmU0MWVjMDA5NDMzYTg0YmEwMWM",
+      "derivedFrom": "9901708.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 4372,
+      "sha256": "cfd1f766afdcf6ae761d5a9bc1f19b06e43668878902513451c3c421a8c020ca",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8090735.823c58a79a10.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTE4ODM0OHxpbWFnZS9wbmd8YUdFNEwyaGtaUzg1TVRZMU56RTVORE0zTXpReXwxYzdlY2JmZGE0MDc4ZDQ0ZTgxNmUwODhiYWRlMTQ0ZGFhOGUwNmNmYTMxMjFiYzc5OGFjNTM2YTNkM2JkOGIw",
+      "derivedFrom": "8090735.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 5970,
+      "sha256": "823c58a79a1025ad902084fd552e4bf33696a0f6a11685c7342299c96751e28d",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8091688.a409d7d5d6b4.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NTM0ODI5fGltYWdlL2pwZWd8YURJNUwyZ3lOaTg1TVRZMk1UUTRORFk0TnpZMnw0MDllMjk5MDYwMmRjZjc2Y2M0N2E3ZjE0ZWRiZDkzOWMzZDc3YWViZTdmYzVhOWM3YTcxMGJjNWRjNmMwN2Q3",
+      "derivedFrom": "8091688.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 18672,
+      "sha256": "a409d7d5d6b4d6a49d39bc325bf72cfa8de6df11151c76cdf8d35be79509bcbd",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097348.b9b8895fda1c.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MjIxNTk4NnxpbWFnZS9qcGVnfGFESTNMMmhrWVM4NU1UY3hOVE0zTWpNeE9UQXl8NTNlMTExZGNhOTYzYTFhZWU0Nzc5YWI4MDc3YmM1OTk4YzBmNmVjOWZhOTFmODAzNzY4YzAzZmQzMjdiMzlhNw",
+      "derivedFrom": "8097348.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 9976,
+      "sha256": "b9b8895fda1c325f1ec4a6cde3a7ad3ec032a66f546b2408009ff928b133ac62",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8090880.c28b8bedfeb8.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTU2Nzk2N3xpbWFnZS9qcGVnfGFHUTVMMmhtTlM4NU1UWTFOelE0T1RrME1EYzR8ZGY2M2JhYzk4MDE1Mjk0M2QyMjg2MmZmMTQ2MzkyMjIxZDA4MDA2Y2FkOWZmYTE5MjYyY2U4ZmVmODAxY2IxMw",
+      "derivedFrom": "8090880.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 12068,
+      "sha256": "c28b8bedfeb83bca72ee6d8e9391c8bb93c6dda96217d55b226a243433ed893c",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8076442.49b48a7daa28.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NjY1MDAxfGltYWdlL2pwZWd8YUdNMUwyZzRZUzg1TVRVMU5EazJNalEzTXpJMnw4Y2RkMDMxNGRiNzIwY2YwMzQ1ODY1YTcwYjlmN2NmODk0MWQ0OGQ0ODkwMTEwODVkNzVkN2YzNGQ5ZTgyZTll",
+      "derivedFrom": "8076442.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 9894,
+      "sha256": "49b48a7daa28a435b46864c2f78f6d4d16729d9576788cb4a3219a93baefa517",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8096833.49af8d6d764a.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/N-ytt-kuva-2026-03-27-131531.png?context=bWFzdGVyfHJvb3R8MTc3MjI3fGltYWdlL3BuZ3xhRGhrTDJneU55ODVNRGcwTkRrNE5UUXlOakl5TDA3RHBIbDBkTU8yYTNWMllTQXlNREkyTFRBekxUSTNJREV6TVRVek1TNXdibWN8MjY5MGNkMGMwMjQzNTRjYmY0MzJmN2I1MTE2ODFjYzY1NWYxNmYwYmVkMGQxYzZjYjU4ZThlYjBjNjFlZjRkMA",
+      "derivedFrom": "8096833.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 5762,
+      "sha256": "49af8d6d764ae7264306cd3001a977430f971502aa3be7183ed520e67ce3f4ae",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/874495.5948d8174936.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MjYyODExNnxpbWFnZS9qcGVnfGFHUXdMMmc1T1M4NU1UVTJPVEF6TVRReE5EQTJ8ODg1ZWVmNWQ0YmQwYTc1YmEwN2FhOWY0YmI5N2Q0M2NmY2I4NmViNWY5MGVmNjU2YzcyM2ExMWI2ODJiOTkzNQ",
+      "derivedFrom": "874495.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 26392,
+      "sha256": "5948d8174936ba6118d2417d9a834715352753b3ad2d9732a589c85c5aa68b22",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8055469.301d75efec54.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8ODMwMjI0fGltYWdlL2pwZWd8YUdFeEwyaGpOUzg1TVRVME1UY3lNRFU1TmpjNHxkZWY5OWExN2Y0Yjg1MGJmOWM2NWRjODUyOTljN2ZiZjFiZWM2MmZlNTBlNDliZGNhOTQ5NTlhODljYWExMDM2",
+      "derivedFrom": "8055469.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 5012,
+      "sha256": "301d75efec54339cf0799b4c2490c7268e442386980747f54cf9ff2a0a0f1509",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/9901719.caa48e35f5c9.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NjE5MTIwfGltYWdlL3BuZ3xhR001TDJnek55ODVNVFUzTVRZNE5ETXhNVE0wfDJjYmYwNDBiZGFmZDZjZGUxMTA5N2Y5NzM0N2IyMzg2NmNjNGYyZTYzNjkzYTc5OTc3OGE1MzY1MTY3YmMzM2I",
+      "derivedFrom": "9901719.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 7660,
+      "sha256": "caa48e35f5c921d768b019a657fbdf68205264b915581a94f7636914c432c8a7",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/610329.4ca3581d6ab6.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MzczMjJ8aW1hZ2UvanBlZ3xhRGxtTDJnNE9TODRPRGN6T1RrME1ESTNNRE00fDRiMTRmMTMzZGU1YWQwMDRiYmUzN2I1MDU0MWUxNTE4YTdhMWMzZDNhN2ExOGQ2YWU3YmZiZDlhOGI3MjhjMGY",
+      "derivedFrom": "610329.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 27160,
+      "sha256": "4ca3581d6ab6c640e763dbe79580b2dff14339d3f94fbf95b766d015c59fee5c",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097595.779fe9172992.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8Mjc0ODQ2Mjl8aW1hZ2UvcG5nfGFHTTBMMmd4TlM4NU1UY3hOakE0T1Rrek9ESXl8YzU5OTM2NDBjYmQ5OTU2YWUyZmYwM2RkODQwNGVkYWYzMDg0NDRiOWVjNDk3ZDUxMTY2NjA4Y2E3M2ZiYjc1ZQ",
+      "derivedFrom": "8097595.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 22686,
+      "sha256": "779fe917299280b43a5a7838ae2fecef7ea6cd8a6b6bcadfd74cb98cd8278f8a",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8082064.8fceca1b620b.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8ODUyODU1fGltYWdlL2pwZWd8YURZNEwyZ3pPUzg1TVRZMU16VTFNREkwTkRFMHxmMTY1N2I0MmY3ZjI5MGRkOWE2NjMwZGZjMGJmNzZkYjVhNTMwNDI0NTQ5OTg0YTMyMWNkMzY3NTA5YWIyNjE2",
+      "derivedFrom": "8082064.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 5660,
+      "sha256": "8fceca1b620bb2f0e9c0736a8098274b1895303397c9f30c1c224d9aaae251b3",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097472.5bd214a3ff7e.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/08/valio-punainen-juustopakkaus-34842.png",
+      "derivedFrom": "8097472.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 26470,
+      "sha256": "5bd214a3ff7ed7f09b8255726908caa593b0fcd37b0623aa02984e492f0b4684",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8047279.55745d772d97.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8NDI4MDQwMXxpbWFnZS9qcGVnfGFEVTBMMmc0Tnk4NU1UVXpPVEUxTWpnNU5qTXd8MWY1ZmZiNmZmOTkwNzgyNzg2ZjVhZmU4NzQ0YzBhNmE3ODNlYjFlM2E3NjA4YzhiZjViMDJjZjNmYjJhY2QxYg",
+      "derivedFrom": "8047279.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 10848,
+      "sha256": "55745d772d97382cdf626ecc61ca02034e5cfefc42abbf1ae895c14030159546",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8510.9c8191822efe.webp",
+      "source": "https://www.valio.fi/cdn-cgi/image/format=auto/https://cdn-wp.valio.fi/valio-fi/2026/05/valio-aura-3700.png",
+      "derivedFrom": "8510.png",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 17952,
+      "sha256": "9c8191822efeeef94f578f173db45ac7ace2393fd6b7e415f3d8b2b1e64fb649",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8097382.597c033933ca.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTcyNDUwNXxpbWFnZS9qcGVnfGFHTTFMMmhpTUM4NU1UY3hOVEE1TnpBMk56Z3l8ZGUzYzI0M2VkMWMxY2RjNjkwZDFlOTJiZjg4ODhmYTNmZjMwZGE2YzRjM2UyYmNhNDNlODJjZjliYzlhZjVjOQ",
+      "derivedFrom": "8097382.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 33100,
+      "sha256": "597c033933cac6cf3e27778f656a7b820c5c9b2bec154448c96bf39b26faebf6",
+      "mime": "image/webp"
+    },
+    {
+      "file": "optimized/8093815.0f4641a13154.webp",
+      "source": "https://imgfly.scarabresearch.com/w_800/https://api.valioaimo.fi/medias/?context=bWFzdGVyfHJvb3R8MTg3NzA4M3xpbWFnZS9qcGVnfGFHVXpMMmd4WlM4NU1UWTNOamN6TVRZek9EQTJ8Yzk3ZTExZDhlN2JjNzVhMTYzYTRiMjFmOWQyMGQzZjQzY2U3ZWIzYWRlMGQzMWQyMjM2NjA5NWZjMzgzZjA4ZQ",
+      "derivedFrom": "8093815.jpg",
+      "transform": "fit 400x400, WebP quality 82, preserve alpha",
+      "bytes": 7468,
+      "sha256": "0f4641a131548c1e3e8d6ba1be8a020c7ee3bfcb4488b07155bff9612d376b30",
+      "mime": "image/webp"
+    }
+  ]
+}

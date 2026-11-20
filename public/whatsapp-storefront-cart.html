@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ostoskori | Valio Aimo® toimitustukku (demo)</title>
+  <link rel="icon" href="/whatsapp/cart/assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="/whatsapp/cart/assets/Matter-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/whatsapp/cart/assets/Matter-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/whatsapp/cart/assets/National2Compressed-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="/whatsapp/cart/storefront.css">
+  <link rel="stylesheet" href="/whatsapp/cart/storefront-cart.css">
+  <link rel="stylesheet" href="/whatsapp/cart/shop.css">
+  <script type="module" src="/whatsapp/cart/shop.js"></script>
+</head>
+<body class="cart-page wa-cart">
+  <a class="skip" href="#main">Siirry sisältöön</a>
+  <header class="store-header">
+    <div class="service-bar"><div class="container">
+      <nav class="services" aria-label="Valio Aimon palvelut">
+        <span class="service"><span class="service-logo" aria-hidden="true"></span>Valioaimo.fi</span>
+        <span class="service"><span class="icon i-storefront" aria-hidden="true"></span>Pikatukku</span>
+        <span class="service selected" aria-current="page"><span class="icon i-truck" aria-hidden="true"></span>Toimitustukku</span>
+        <span class="service"><span class="icon i-package" aria-hidden="true"></span>VALO Tilauspalvelu</span>
+        <span class="service"><span class="icon i-chart" aria-hidden="true"></span>Minun Aimo</span>
+      </nav>
+      <div class="account"><span class="wa-demo-pill">Tilausdemo</span><span class="customer" id="wa-account-company">WhatsApp-asiakas</span><span class="wa-account-user"><span class="icon i-user" aria-hidden="true"></span><span class="user-name">WhatsApp-tilaaja</span></span><span class="language">FI</span></div>
+    </div></div>
+    <div class="container main-header">
+      <span class="brand" aria-label="Valio Aimo"><img src="/whatsapp/cart/assets/logo.svg" alt="Valio Aimo" width="96" height="32"></span>
+      <nav class="main-nav" aria-label="Päävalikko"><span>Tuotteet</span><span>Tilaukset</span><span>Ajankohtaista</span></nav>
+      <label class="search" for="wa-message" title="Kirjoita lisäys tai muutos ostoskoriin"><span class="icon i-search" aria-hidden="true"></span><span class="wa-search-hint">Lisää tai muuta tuotteita</span></label>
+      <div class="header-actions">
+        <a class="header-action" href="#wa-days" id="wa-head-date" aria-label="Toimituspäivä"><span class="header-icon"><span class="icon i-calendar" aria-hidden="true"></span><span class="badge" id="wa-head-date-count">1</span></span><span>Toimituspäivä<b id="wa-head-date-label">–</b></span></a>
+        <a class="header-action" href="#wa-summary" id="wa-head-cart" aria-label="Ostoskori"><span class="header-icon"><span class="icon i-cart" aria-hidden="true"></span><span class="badge" id="wa-head-count">0</span></span><span>Ostoskori<b id="wa-head-total">0,00 €</b></span></a>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="container cart-main">
+    <div class="wa-origin"><span class="wa-origin-badge" aria-hidden="true">WA</span><p>Koottu WhatsApp-keskustelussa. Sama ostoskori kuin apurilla: muutokset näkyvät molemmissa.</p></div>
+    <h1>Ostoskori</h1>
+    <div id="wa-days" class="cart-days" role="tablist" aria-label="Ostoskorin toimituspäivät"></div>
+    <div class="cart-date-tools"><strong id="wa-selected-day">Ostoskoria ladataan…</strong><button type="button" data-prefill="Toimituspäivä ">Muuta toimituspäivää</button></div>
+    <div class="cart-details">
+      <dl><dt>Asiakas</dt><dd id="wa-company">–</dd></dl>
+      <dl><dt>Toimitusosoite</dt><dd id="wa-site">–</dd></dl>
+      <dl><dt>Maksutapa</dt><dd>Demotilaus<br>ei maksua</dd></dl>
+      <dl><dt>Ruokavaliot</dt><dd id="wa-diet">–</dd></dl>
+    </div>
+    <section class="cart-content" aria-labelledby="cart-title">
+      <h2 id="cart-title">Ostoskorin sisältö</h2>
+      <form class="cart-tools" id="wa-edit-form">
+        <label class="cart-product-search"><span class="icon i-search" aria-hidden="true"></span><input id="wa-message" type="text" maxlength="4000" placeholder="Lisää tai muuta tuotteita, esim. kermaa 2 l lisää" aria-label="Lisää tai muuta tuotteita" autocomplete="off" enterkeyhint="send"></label>
+        <div class="cart-tool-actions">
+          <button type="submit" class="wa-send"><span class="icon i-send" aria-hidden="true"></span>Lähetä</button>
+          <button type="button" data-action="reload"><span class="icon i-refresh" aria-hidden="true"></span>Päivitä</button>
+          <button type="button" data-action="print"><span class="icon i-printer" aria-hidden="true"></span>Tulosta</button>
+        </div>
+      </form>
+      <div id="wa-alert" class="cart-alert wa-alert" role="status" hidden><span class="icon i-warning" aria-hidden="true"></span><p id="wa-alert-text"></p></div>
+      <div class="cart-columns">
+        <div class="wa-lines-col">
+          <section id="wa-checks" class="wa-checks" aria-labelledby="wa-checks-title" hidden>
+            <div class="wa-checks-head"><span class="icon i-warning" aria-hidden="true"></span><h3 id="wa-checks-title">Huomioita ostoskorista</h3></div>
+            <div id="wa-checks-list"></div>
+          </section>
+          <div id="wa-lines"><div class="cart-empty"><p>Ostoskoria ladataan…</p></div></div>
+        </div>
+        <aside class="cart-summary" id="wa-summary" aria-labelledby="cart-summary-title">
+          <h3 id="cart-summary-title">Yhteenveto</h3>
+          <dl id="wa-totals"></dl>
+          <button type="button" class="cart-checkout" id="wa-review" disabled>SIIRRY MAKSAMAAN</button>
+          <section id="wa-review-panel" class="wa-review" aria-label="Apurin vastaus" hidden>
+            <h4>Apurin vastaus</h4>
+            <div id="wa-reply" class="wa-reply" aria-live="polite"></div>
+          </section>
+          <section id="wa-done" class="wa-done" role="status" hidden><span class="icon i-check" aria-hidden="true"></span><div><strong id="wa-done-title">Tilaus vastaanotettu</strong><p id="wa-done-text"></p><div id="demo-checkout"></div></div></section>
+          <p class="wa-demo-note">Tilausdemo: oikeaa maksua tai Valio-tilausta ei tehdä.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div id="wa-status" class="cart-status" role="status" hidden></div>
+  <footer class="site-footer"><div class="container">
+    <div class="footer-main">
+      <div><img class="footer-logo" src="/whatsapp/cart/assets/logo.svg" alt="Valio Aimo" width="96" height="32"></div>
+      <div class="footer-column"><strong>Verkkokauppa</strong><span>Tule asiakkaaksi</span><span>Myyntiehdot</span></div>
+      <div class="footer-column"><strong>Asiakaspalvelu</strong><span>Yhteystiedot</span><span>Usein kysyttyä</span><p>Myyntipalvelu p. 010 381 190<br>arkisin klo 8–15.30</p></div>
+      <div class="footer-column"><strong>Valio Aimo®</strong><span>valioaimo.fi</span></div>
+    </div>
+    <div class="footer-bottom"><span>© Valio Oy</span><span>Demo: WhatsApp-tilausapurin ostoskori</span></div>
+  </div></footer>
+  <noscript><p class="container">Salli JavaScript nähdäksesi WhatsAppissa kokoamasi ostoskorin.</p></noscript>
+</body>
+</html>
