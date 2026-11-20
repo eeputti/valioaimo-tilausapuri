@@ -9,6 +9,7 @@ salaisuuksia tai koko keskusteluhistoriaa.
 - **Muutos:** LICENSEn loppuun Tausta-kappale: aimo-ai oli Eeliksen ja Junction-tiimin yhteinen idea ja ensimmäinen prototyyppi, Eelis jatkokehitti sitä ensin aimo-aissa ja 17.11. alkaen tässä repossa, ja muiden tiimiläisten koodi on poistettu tai kirjoitettu uudelleen 20.11.
 - **Päätös:** WhatsAppia ja pilviajoa ei mainita tämän repon uusina, koska ne olivat jo aimo-aissa (WhatsApp-kanavan ensimmäinen commit oli Danielin 14.11., ja Vercel-ajo oli aimo-aissa ennen 17.11.). Myöskään "täysin uusi koodi" ei pidä sellaisenaan paikkaansa, koska osa Eeliksen omasta koodista on kirjoitettu alun perin aimo-aihin. Lisenssiin kirjattiin vain git-historian tukemat väitteet.
 - **README (Eelis: "Korjaa README"):** Tausta kertoo nyt, että kehitys jatkui ensin aimo-aissa ja 17.11. alkaen täällä. Esimerkkeinä tämän repon työstä Claude-agentti, viestien niputus ja maksun jälkeinen kiitosviesti, jotka kaikki tehtiin täällä. Prototyyppi mainitaan yhä vain kerran.
+- **Eeliksen oma muokkaus GitHubissa (17aa725):** viimeinen virke on nyt "Tämän repon koodi on kuitenkin täysin Eelis Puron kirjoittamaa." Maininta tiimiläisten koodin uudelleenkirjoituksesta poistui.
 - **Tarkistukset:** vain LICENSE ja tämä loki muuttuivat. `git diff --check` läpi.
 
 ## 20.11.2026 — pienet siistimiset juuren asetustiedostoihin (Claude Code)
