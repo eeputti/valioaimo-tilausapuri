@@ -3,6 +3,15 @@
 Tämä tiedosto välittää toteutuksen tilan ja päätökset sessioiden välillä. Lisää uusin työvaihe ylimmäksi. Älä kirjaa
 salaisuuksia tai koko keskusteluhistoriaa.
 
+## 20.11.2026 — tilanne Valion odotukseen: uudelleenkirjoitettu WhatsApp toimii tuotannossa (Claude Code)
+
+- **Eeliksen kysymys:** onko vielä työstettävää, vai odotetaanko Valiota.
+- **Varmistettu tuotannossa:** Eeliksen WhatsApp-keskustelussa botin kanssa on tänään klo 15.02–15.04 koko kulku uudelleenkirjoitetulla ytimellä (julkaisu klo 14.49): tilaus (kerma ja maito), allergioiden kysyminen, kori ja Avaa ostoskori -painike, demomaksu ja kiitosviesti "Kiitos tilauksestasi! Maksu on hyväksytty ja tilaus AGW-20261120-0021 on vahvistettu. Toimitus on ma 23.11. …". Siksi uutta testiviestiä ei lähetetty.
+- **`npm run expiry:check` 20.11.:** Turson avain ja demon hinnat eivät vanhene. WhatsApp-token vanhenee 13.1.2027 klo 22.25.
+- **Ennen 13.1.2027 (Eelis):** uusi system user -token (Token expiration: Never), `.env`:iin, `push-env.mjs --only=WHATSAPP_ACCESS_TOKEN` ja botin uudelleenjulkaisu. Muuten botti lakkaa vastaamasta.
+- **Avoinna, ei kiireellisiä:** Keskustele-sivun koodinäkymä (`agent-code.js`) näyttää vanhan putken numerovalinnat; tuotannossa yhä Opus 5.5 nopealla tilalla (noin 1,2 $ per tilauskeskustelu, maksaa vain käytöstä); asiakaskohtainen muisti (haara vain paikallisesti ja vanhalla historialla, siirrettävä uuden mainin päälle); epäonnistuneet keskustelut testeiksi; korisivun siirto agentille; selainistunnon lukko.
+- Ei koodimuutoksia eikä testejä.
+
 ## 20.11.2026 — LICENSEen tausta aimo-aista (Claude Code)
 
 - **Eeliksen pyyntö:** lisenssiin maininta, että aimo-ai oli tiimin yhteinen idea ja pohja, jota Eelis jatkojalosti, ja että tämän repon koodi on uutta.
