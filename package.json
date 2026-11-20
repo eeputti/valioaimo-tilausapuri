@@ -1,0 +1,33 @@
+{
+  "name": "valioaimo-tilausapuri",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "WhatsApp ordering assistant and signed cart, backed by the Aimo Agent Gateway.",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/index.mjs",
+    "dev": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --watch-path=server server/index.mjs",
+    "images": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env scripts/fetch-images.mjs",
+    "fetch-data": "node --env-file-if-exists=.env scripts/fetch-data.mjs",
+    "aimo": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env scripts/aimo.mjs",
+    "aimo:eval": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env scripts/aimo-eval.mjs",
+    "aimo:eval:spoken": "node --disable-warning=ExperimentalWarning scripts/aimo-spoken-eval.mjs",
+    "whatsapp": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --env-file-if-exists=.env.whatsapp server/whatsapp-server.mjs",
+    "whatsapp:member": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --env-file-if-exists=.env.whatsapp scripts/whatsapp-member.mjs",
+    "expiry:check": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --env-file-if-exists=.env.whatsapp --env-file=deploy/vercel/.env.cloud scripts/expiry-check.mjs",
+    "whatsapp:member:cloud": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --env-file-if-exists=.env.whatsapp --env-file=deploy/vercel/.env.cloud scripts/whatsapp-member.mjs",
+    "whatsapp:selfplay100": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env scripts/whatsapp-selfplay-batch.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "@libsql/client": "^0.18.0",
+    "@vercel/functions": "^3.11.3",
+    "ajv": "^8.20.0"
+  }
+}

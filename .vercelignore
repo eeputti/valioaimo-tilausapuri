@@ -1,0 +1,33 @@
+# Vercel-julkaisuun vain palvelimen tarvitsemat tiedostot. Kaikki muu, erityisesti .env-tiedostot ja kannat, jää pois.
+/*
+!/api
+!/server
+!/public
+!/scripts
+!/deploy
+!/data
+!/package.json
+!/package-lock.json
+!/vercel.json
+/deploy/*
+!/deploy/vercel
+!/deploy/cloudflare
+/deploy/cloudflare/*
+!/deploy/cloudflare/publish-orders.mjs
+!/deploy/cloudflare/trace-reader.mjs
+!/deploy/cloudflare/src
+/deploy/cloudflare/src/*
+!/deploy/cloudflare/src/protocol.ts
+!/deploy/cloudflare/src/agent-trace.ts
+/scripts/*
+/data/*
+!/data/catalog.json
+# Korisivun Valion tuotekuvat (server/whatsapp/storefront-cart.mjs lukee data/img/_meta.json).
+!/data/img
+**/.env*
+**/*.db
+**/*.db-*
+**/*.pem
+**/node_modules
+**/.DS_Store
+**/*.log

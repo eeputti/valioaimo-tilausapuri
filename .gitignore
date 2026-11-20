@@ -1,0 +1,23 @@
+node_modules/
+.DS_Store
+
+# Salaisuudet: Meta-, Anthropic-, Valio- ja Cloudflare-avaimet pysyvät koneella tai isännän salaisuusvarastossa
+.env
+.env.*
+!.env.example
+
+# Haasteen aineisto on rajattu: katalogi ja raakadata vain paikallisesti
+data/
+
+# Kaupalliset fontit (Matter, National 2) eivät kuulu julkiseen repoon
+*.otf
+
+# Paikallinen demoasetus numeroineen
+public/demo-config.json
+
+# Vercel-projektin linkitys (vercel link) ja pilven omat asetukset (deploy/vercel/.env.cloud, .env.*-sääntö).
+.vercel/
+
+# Lokit ja Claude Coden paikalliset työpuut
+*.log
+.claude/worktrees/

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --omit=dev --no-audit --no-fund",
+  "buildCommand": "",
+  "outputDirectory": "deploy/vercel/static",
+  "regions": [
+    "fra1"
+  ],
+  "functions": {
+    "api/index.mjs": {
+      "maxDuration": 300,
+      "includeFiles": "{server/**,public/**,deploy/cloudflare/*.mjs,deploy/cloudflare/src/protocol.ts,deploy/cloudflare/src/agent-trace.ts,data/catalog.json,data/img/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/:path*", "destination": "/api/index?__path=:path*" }
+  ]
+}
