@@ -1,0 +1,34 @@
+/* Ostoskori-välilehden tyhjä tila Toimitustukun korikuoressa (public/kori/ on generoitu kopio kaupan tyyleistä). */
+.kori-shell .kori-search { text-decoration: none; cursor: pointer; }
+.kori-shell .kori-search:hover .wa-search-hint { color: var(--petrol); }
+.kori-empty { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 48px 24px; text-align: center; background: #fff; border-top: 1px solid var(--line); border-radius: 4px; }
+.kori-empty-icon { display: grid; place-items: center; width: 88px; height: 88px; border-radius: 50%; background: #e6f0f2; color: var(--petrol); }
+.kori-empty-icon .icon { width: 44px; height: 44px; }
+.kori-empty h3 { margin: 4px 0 0; font: 400 34px/1.05 National, sans-serif; text-transform: uppercase; color: var(--petrol); }
+.kori-empty > p { max-width: 520px; margin: 0; font-size: 16px; line-height: 1.5; color: #333; }
+.kori-wa { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; margin-top: 6px; padding: 12px 24px; border-radius: 4px; background: #1fa855; color: #fff; font: 400 22px National, sans-serif; letter-spacing: .5px; text-transform: uppercase; text-decoration: none; }
+.kori-wa:hover { background: #178a45; }
+.kori-wa svg { width: 26px; height: 26px; flex: none; }
+.kori-wa:focus-visible, .kori-alt:focus-visible, .kori-shell .kori-search:focus-visible { outline: 2px solid #1668e3; outline-offset: 3px; }
+
+.kori-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; max-width: 640px; margin: 18px 0 0; padding: 0; list-style: none; counter-reset: kori; }
+.kori-steps li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 16px 10px; border-radius: 4px; background: #f3f6f7; font-size: 14px; line-height: 1.4; color: #333; }
+.kori-steps li + li::before { content: ''; position: absolute; left: -12px; top: 36px; width: 12px; height: 2px; background: #b9c6ca; }
+.kori-step-icon { display: grid; place-items: center; min-width: 40px; height: 40px; border-radius: 20px; font-weight: 700; font-size: 13px; }
+.kori-step-icon.wa { background: #25d366; color: #fff; }
+.kori-step-icon.link { padding: 0 12px; border: 1px solid #c7d3d6; background: #fff; color: #027eb5; font-size: 13px; white-space: nowrap; }
+.kori-step-icon.cart { background: var(--petrol); color: #fff; }
+.kori-step-icon.cart .icon { width: 22px; height: 22px; }
+
+.kori-demo { max-width: 560px; padding: 10px 14px; border-radius: 4px; background: #fff1bf; font-size: 14px !important; color: #3d3000 !important; }
+.kori-alt { font-size: 14px; color: var(--petrol); }
+.kori-empty.kori-offline .kori-empty-icon { background: #fff1bf; color: #b26b00; }
+
+@media (max-width: 700px) {
+  .kori-empty { padding: 32px 16px; }
+  .kori-empty h3 { font-size: 28px; }
+  .kori-wa { width: 100%; justify-content: center; font-size: 19px; }
+  .kori-steps { grid-template-columns: 1fr; }
+  .kori-steps li { flex-direction: row; text-align: left; }
+  .kori-steps li + li::before { display: none; }
+}

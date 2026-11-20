@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#003c75">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Agentin jälki | Aimo-tilausapuri</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/mobile-gate.js"></script>
+  <link rel="stylesheet" href="/agent-code.css">
+  <link rel="stylesheet" href="/agentti.css">
+  <link rel="stylesheet" href="/agent-options.css">
+  <script type="module" src="/agentti.js"></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h1V4zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h-1V4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.2 7 10 4-1.8 7-5.5 7-10V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sign" viewBox="0 0 24 24"><path d="M14.5 4.5l5 5L9 20H4v-5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 8a7.5 7.5 0 1 0 .8 6.5M19 3.5V8h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15M5 19l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3 3.5v3h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6.5" cy="17.5" r="1.8" fill="#fff" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17.5" r="1.8" fill="#fff" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <header class="site-header"><a class="site-logo" href="/" aria-label="Aimo-tilausapurin etusivu"><img src="/aimo-logo.png" alt="Valio Aimo" width="120" height="42"></a><nav class="site-tabs" aria-label="Sivut"><a href="/">Etusivu</a><a href="/keskustele">Keskustele</a><a href="/ostoskori">Ostoskori</a><a href="/miten" aria-current="page">Näin se toimii</a></nav></header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow" id="order-label">TILAUSAPURI</p>
+      <h1 id="title">Näin agentti kokosi tilauksen.</h1>
+      <p class="lead">WhatsApp-viesteistä ostoskoriksi ja allekirjoitetuksi tilaukseksi. Kaikki alla on tämän tilauksen omaa dataa.</p>
+    </section>
+
+    <!-- Keskustelu vasemmalla, agentin ajo oikealla: sama tilaus kahdelta puolelta. -->
+    <div id="split" class="split" hidden>
+      <section id="keskustelu" class="pane chat-pane" aria-labelledby="chat-title">
+        <div class="pane-bar">
+          <span class="pane-icon wa" aria-hidden="true"><svg><use href="#i-chat"/></svg></span>
+          <h2 id="chat-title" class="pane-title">WhatsApp-keskustelu</h2>
+          <span class="pane-tag"><svg aria-hidden="true"><use href="#i-eye"/></svg>Vain luku</span>
+        </div>
+        <div id="chat" class="chat" aria-label="Kokin ja tilausapurin viestit"></div>
+        <p class="pane-foot">Valitse viesti, niin näet oikealta, mitä agentti teki sillä.</p>
+      </section>
+      <figure id="code" class="code" hidden>
+        <div class="code-bar">
+          <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span id="code-file" class="code-file">tilausapuri/agentti.js</span>
+          <span id="code-state" class="code-state">VALMIS</span>
+          <button id="code-replay" class="code-replay" type="button" aria-label="Toista koodin kirjoitus alusta"><svg aria-hidden="true"><use href="#i-refresh"/></svg></button>
+        </div>
+        <ol id="code-lines" class="code-lines" aria-label="Agentin kutsut tämän tilauksen aikana"></ol>
+        <figcaption>Rivit on koottu tämän tilauksen tallennetusta datasta: oikeat rajapintapolut, kentät ja vastaukset, lyhennettyinä. Avaimet, allekirjoitukset ja puhelinnumerot eivät ole mukana.</figcaption>
+      </figure>
+    </div>
+    <div id="stats" class="stats" hidden></div>
+
+    <section class="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="sr-only">Miten tämä toimii</h2>
+      <ol class="flow">
+        <li><a href="#keskustelu"><span class="step-icon wa"><svg><use href="#i-chat"/></svg></span><strong>WhatsApp</strong><small>Kokki kirjoittaa omin sanoin.</small></a></li>
+        <li><a href="#tulkinta"><span class="step-icon"><svg><use href="#i-brain"/></svg></span><strong>Tulkinta</strong><small>Tuotteet, määrät, päivä ja ruokavalio.</small></a></li>
+        <li><a href="#vaihtoehdot"><span class="step-icon"><svg><use href="#i-search"/></svg></span><strong>Tuotehaku</strong><small>Tilattavat vaihtoehdot ja hinnat Valion rajapinnasta.</small></a></li>
+        <li><a href="#keskustelu"><span class="step-icon"><svg><use href="#i-cart"/></svg></span><strong>Ostoskori</strong><small>Kokki valitsee ja vahvistaa itse.</small></a></li>
+        <li><a href="#portti"><span class="step-icon green"><svg><use href="#i-shield"/></svg></span><strong>Portti</strong><small>Allekirjoitettu tarjous, ostovaltuus ja päätösketju.</small></a></li>
+      </ol>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">Haetaan agentin jälkeä…</p>
+    <button id="retry" class="retry" type="button" hidden><svg aria-hidden="true"><use href="#i-refresh"/></svg>Yritä uudelleen</button>
+
+    <div id="trace" hidden>
+      <section id="tulkinta" class="block" aria-labelledby="understood-title">
+        <div class="block-head"><span class="num">1</span><div><h2 id="understood-title">Mitä agentti ymmärsi</h2><p>Puhekielestä rakenteiseksi tarpeeksi. Tämän tilausmoottori tarkistaa ennen jokaista hakua.</p></div></div>
+        <div id="delivery" class="delivery"></div>
+        <div id="understood" class="needs"></div>
+      </section>
+
+      <section id="vaihtoehdot" class="block" aria-labelledby="options-title">
+        <div class="block-head"><span class="num">2</span><div><h2 id="options-title">Vaihtoehdot, joista valittiin</h2><p>Mitä haku löysi, miksi juuri nämä näytettiin ja mitä kokki valitsi. Vihreä on kokin valinta.</p></div></div>
+        <div id="options"></div>
+      </section>
+
+      <section id="portti" class="block" aria-labelledby="gate-title">
+        <div class="block-head"><span class="num">3</span><div><h2 id="gate-title">Portti tarkisti</h2><p>Jokainen vaihe on rivi tilausportin päätösketjussa. Rivit on ketjutettu tiivisteillä.</p></div></div>
+        <ol id="ledger" class="ledger"></ol>
+      </section>
+
+      <section id="tilaus" class="block" aria-labelledby="order-title">
+        <div class="block-head"><span class="num">4</span><div><h2 id="order-title">Lopullinen tilaus</h2><p id="order-note"></p></div></div>
+        <ul id="order-lines" class="order-lines"></ul>
+        <div id="totals" class="totals"></div>
+      </section>
+
+      <details class="raw">
+        <summary><svg aria-hidden="true"><use href="#i-eye"/></svg>Näytä kaikki data (JSON)</summary>
+        <p>Tämä on sama data, josta sivu on piirretty. Puhelinnumerot, nimet, korilinkit ja allekirjoitukset on jätetty pois jo ennen julkaisua.</p>
+        <pre id="raw"></pre>
+      </details>
+    </div>
+
+    <a id="back" class="back" href="/tilaukset.html">← Takaisin tilauksiin</a>
+  </main>
+  <footer><span>Aimo, Tilausapuri</span><span>Demoympäristö: oikeaa Valio-tilausta ei lähetetty.</span></footer>
+</body>
+</html>

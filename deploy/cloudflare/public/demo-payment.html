@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Maksu | Aimo-tilausapuri</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/mobile-gate.js"></script>
+  <link rel="stylesheet" href="/demo-payment.css">
+  <script type="module" src="/demo-payment.js"></script>
+</head>
+<body class="pay-body">
+  <header class="site-header"><a class="site-logo" href="/" aria-label="Aimo-tilausapurin etusivu"><img src="/aimo-logo.png" alt="Valio Aimo" width="120" height="42"></a><nav class="site-tabs" aria-label="Sivut"><a href="/">Etusivu</a><a href="/keskustele">Keskustele</a><a href="/ostoskori" aria-current="page">Ostoskori</a><a href="/miten">Näin se toimii</a></nav></header>
+  <main class="pay">
+    <div id="state" class="pay-state">
+      <span class="pay-spinner" aria-hidden="true"></span>
+      <p id="status" role="status" aria-live="polite">Haetaan tilaustasi…</p>
+      <a id="state-home" class="pay-link" href="/" hidden>Palaa etusivulle</a>
+    </div>
+
+    <div id="checkout" class="pay-grid" hidden>
+      <section class="pay-card pay-form" aria-labelledby="pay-title">
+        <div class="pay-head">
+          <h1 id="pay-title">Maksu</h1>
+          <span class="pay-tag">Demo, rahaa ei veloiteta</span>
+        </div>
+
+        <fieldset class="methods">
+          <legend>Maksutapa</legend>
+          <label class="method">
+            <input type="radio" name="method" value="card" checked>
+            <span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 9.5h19" stroke="currentColor" stroke-width="2.4"/><path d="M6 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <span class="method-text"><strong>Maksukortti</strong><small>Visa, Mastercard</small></span>
+          </label>
+          <label class="method">
+            <input type="radio" name="method" value="invoice">
+            <span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2.8h8.5L19 7.3v13.9H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14.3 3v4.5H19M9 12h7M9 15.5h7M9 8.5h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <span class="method-text"><strong>Lasku</strong><small>14 päivää netto</small></span>
+          </label>
+        </fieldset>
+
+        <div id="detail-card" class="detail">
+          <div class="card-visual" aria-label="Testikortti, päättyy 4242, voimassa 12/29">
+            <div class="card-top"><span class="card-chip" aria-hidden="true"></span><span class="card-brand">VISA</span></div>
+            <p class="card-number" aria-hidden="true">•••• •••• •••• 4242</p>
+            <div class="card-bottom" aria-hidden="true"><span><small>Kortinhaltija</small>TESTIKORTTI</span><span><small>Voimassa</small>12/29</span></div>
+          </div>
+          <p class="detail-note">Kokeilussa maksetaan testikortilla. Oikeita korttitietoja ei kysytä.</p>
+        </div>
+
+        <div id="detail-invoice" class="detail" hidden>
+          <dl class="invoice">
+            <div><dt>Laskutus</dt><dd>Asiakkuutesi laskutusosoitteeseen</dd></div>
+            <div><dt>Maksuehto</dt><dd>14 päivää netto</dd></div>
+            <div><dt>Eräpäivä</dt><dd id="due-date"></dd></div>
+            <div><dt>Viite</dt><dd id="invoice-ref"></dd></div>
+          </dl>
+        </div>
+
+        <button id="pay" class="pay-button" type="button"><span class="pay-spinner" aria-hidden="true"></span><span id="pay-label">Maksa</span></button>
+        <p id="note" class="pay-note" role="status" aria-live="polite" hidden></p>
+        <button id="cancel" class="pay-cancel" type="button">Peruuta maksu</button>
+        <p class="pay-secure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="currentColor"/><path d="M8.2 10.5V8a3.8 3.8 0 0 1 7.6 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Suojattu yhteys. Tämä on demo: rahaa ei siirry.</p>
+      </section>
+
+      <aside class="pay-card pay-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Tilauksesi</h2>
+        <dl class="summary-meta">
+          <div><dt>Tilausnumero</dt><dd id="order-id"></dd></div>
+          <div><dt>Toimitus</dt><dd id="delivery"></dd></div>
+        </dl>
+        <ul id="lines" class="summary-lines" aria-label="Tilauksen tuotteet"></ul>
+        <p class="summary-total"><span>Yhteensä<small>alv 0 %</small></span><strong id="amount"></strong></p>
+      </aside>
+    </div>
+
+    <section id="done" class="pay-done" hidden aria-labelledby="done-title">
+      <div class="done-check" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="currentColor"/><path d="M15 27l7.5 7.5L37.5 19" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h1 id="done-title" tabindex="-1">Maksu onnistui</h1>
+      <p class="done-lead">Kiitos! Tilaus <strong id="done-order"></strong> on vahvistettu.</p>
+      <dl class="done-facts">
+        <div><dt>Summa</dt><dd id="done-amount"></dd></div>
+        <div><dt>Toimitus</dt><dd id="done-delivery"></dd></div>
+        <div id="done-method-row"><dt>Maksutapa</dt><dd id="done-method"></dd></div>
+      </dl>
+      <p id="done-note" class="done-note" hidden></p>
+      <div class="done-actions">
+        <a class="pay-button" href="/">Palaa etusivulle</a>
+        <a id="trace" class="pay-secondary" hidden>Katso, miten agentti kokosi tilauksen</a>
+      </div>
+      <p class="done-demo">Demo: rahaa ei veloitettu.</p>
+    </section>
+  </main>
+</body>
+</html>

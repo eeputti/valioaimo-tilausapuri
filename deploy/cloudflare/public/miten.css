@@ -1,0 +1,43 @@
+/* Näin se toimii: lyhyt kehotus keskustelemaan ja esimerkkiajo koodina (agent-code.css). */
+.miten-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.site-main.miten{max-width:960px}
+.miten .site-lead{margin-bottom:16px;font-size:20px;color:#18354b}
+.miten-cta{display:inline-flex;align-items:center;gap:12px;padding:16px 24px;border-radius:999px;background:#1fa855;color:#fff;font-size:17px;font-weight:700;text-decoration:none;
+  box-shadow:0 10px 24px rgba(31,168,85,.28);transition:transform .15s ease,background .15s ease}
+.miten-cta:hover{background:#128c4a;transform:translateY(-1px)}
+.miten-cta:focus-visible,.miten-more:focus-visible{outline:2px solid #1668e3;outline-offset:3px}
+.miten-cta svg{width:20px;height:20px;flex-shrink:0}
+.miten-code{margin-top:48px}
+.miten-code h2{margin:0 0 4px;font-size:21px;color:#003c75}
+.miten-sub{margin:0 0 16px;font-size:14px;line-height:1.5;color:#5f7283}
+.miten-status{margin:0;padding:14px 16px;background:#fff;border-left:3px solid #1668e3;border-radius:8px;font-size:14px;line-height:1.6}
+.miten-status[hidden]{display:none}
+.code[hidden]{display:none}
+.legend{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.legend li{display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;border:1px solid #dbe4eb;border-radius:14px}
+.legend code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#24292f;overflow-wrap:anywhere}
+.legend li>span{font-size:13px;line-height:1.45;color:#5f7283}
+.legend .t-obj{color:#9a6700}
+.legend .t-fn{color:#0969da}
+.legend .t-str{color:#116329}
+.miten-more{display:inline-block;margin-top:16px;font-size:14px;font-weight:700;color:#003c75}
+@media (max-width:760px){
+  .legend{grid-template-columns:1fr}
+  .miten-code .code .code-lines{font-size:12.5px}
+}
+/* Vaihe vaiheelta: mitä tapahtuu ja mitä palvelua siinä käytetään. */
+.stack{margin-top:44px}
+.stack h2{margin:0 0 4px;font-size:21px;color:#003c75}
+.stack-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:none}
+.stack-step{position:relative;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 18px;background:#fff;border:1px solid #dbe4eb;border-radius:16px}
+.stack-step:not(:last-child)::after{content:"";position:absolute;left:37px;bottom:-13px;width:2px;height:12px;background:#b9cde0}
+.stack-no{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#003c75;color:#fff;font-weight:700;font-size:17px}
+.stack-body h3{margin:7px 0 4px;font-size:17px;color:#003c75}
+.stack-body p{margin:0 0 10px;font-size:14.5px;line-height:1.55;color:#18354b}
+.stack-tools{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+.stack-tools li{padding:4px 10px;border-radius:999px;background:#e6eff8;color:#003c75;font-size:12.5px;font-weight:700;line-height:1.4}
+@media (max-width:760px){
+  .stack-step{grid-template-columns:32px 1fr;gap:10px;padding:14px}
+  .stack-no{width:32px;height:32px;font-size:15px}
+  .stack-step:not(:last-child)::after{left:29px}
+}

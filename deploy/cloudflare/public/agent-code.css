@@ -1,0 +1,47 @@
+/* Agentin ajo koodina (agent-code.js): valkoinen editori, kevyet syntaksivärit, rivit kirjoittuvat esiin yksi kerrallaan.
+   Käytössä agentin jäljellä, Näin se toimii -sivulla ja Keskustele-sivun live-näkymässä. Kaikki säännöt .code-luokan alla. */
+.code{--line:#dbe4eb;--good:#1a7f37;--warn:#9a5b00;--sky:#e6eff8;--blue:#003c75;--muted:#5f7283;
+  margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(24,53,75,.05)}
+.code .code-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.code .dots{display:flex;gap:7px;flex-shrink:0}
+.code .dots span{width:12px;height:12px;border-radius:50%;background:#ff5f57}
+.code .dots span:nth-child(2){background:#febc2e}
+.code .dots span:nth-child(3){background:#28c840}
+.code .code-file{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:#57606a}
+.code .code-state{display:inline-flex;align-items:center;gap:7px;margin-left:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:1px;color:var(--good);white-space:nowrap}
+.code .code-state::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--good)}
+.code .code-state.running::before{animation:code-pulse 1s ease-in-out infinite}
+.code .code-state.idle{color:#8c959f}
+.code .code-state.idle::before{background:#c4ccd4}
+.code .code-state.offline{color:var(--warn)}
+.code .code-state.offline::before{background:#e3a008}
+.code .code-replay{display:grid;place-items:center;flex-shrink:0;width:30px;height:30px;padding:0;border:1px solid var(--line);border-radius:8px;background:#fff;color:#57606a;cursor:pointer}
+.code .code-replay:hover{color:var(--blue);border-color:#b9c7d3}
+.code .code-replay svg{width:16px;height:16px}
+.code .code-lines{list-style:none;margin:0;padding:14px 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.7;color:#24292f}
+.code .code-lines li{display:grid;grid-template-columns:4ch minmax(0,1fr);column-gap:2ch;padding:0 16px}
+.code .code-lines li.pending{visibility:hidden}
+.code .code-lines li.later{opacity:.45}
+.code .ln{color:#8c959f;text-align:right;user-select:none}
+.code .lc{min-width:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.code .ln-i1 .lc{padding-left:2ch}
+.code .ln-i2 .lc{padding-left:4ch}
+.code .ln-i3 .lc{padding-left:6ch}
+.code .t-kw{color:#8250df}
+.code .t-obj{color:#9a6700}
+.code .t-fn{color:#0969da}
+.code .t-str{color:#116329}
+.code .t-num{color:#0550ae}
+.code .t-prop{color:#953800}
+.code .t-com{color:#6e7781;font-style:italic}
+.code .res .lc{color:#bc4c00}
+.code .arrow{color:#bc4c00}
+.code .res.good .lc,.code .res.good .arrow{color:var(--good);font-weight:700}
+.code .res.warn .lc,.code .res.warn .arrow{color:var(--warn);font-weight:700}
+.code .res.muted .lc,.code .res.muted .arrow{color:#8c959f}
+.code .note{margin-left:1.5ch;padding:0 6px;border-radius:5px;background:var(--sky);color:var(--blue);font-size:12px;white-space:nowrap}
+.code .cursor{display:inline-block;width:.6em;height:1.15em;margin-left:2px;vertical-align:text-bottom;background:var(--good);animation:code-blink 1s steps(1) infinite}
+.code figcaption{padding:12px 16px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:var(--muted)}
+@keyframes code-blink{50%{opacity:0}}
+@keyframes code-pulse{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.code .cursor,.code .code-state.running::before{animation:none}}

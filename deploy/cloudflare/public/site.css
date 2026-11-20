@@ -1,0 +1,84 @@
+/* Yhteinen välilehtiotsake kaikilla sivuilla (myös botin palvelimelta välitetyllä korisivulla) ja sivuston omat sisältösivut.
+   Vain .site-*-luokat, jotta sivujen omat tyylit eivät muutu. */
+@font-face{font-family:Matter;src:url("/fonts/Matter-Regular.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:Matter;src:url("/fonts/Matter-Bold.otf") format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:National;src:url("/fonts/National2Compressed-Bold.otf") format("opentype");font-weight:400;font-display:swap}
+
+header.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0;padding:10px max(4vw,16px);
+  background:#fff;border-bottom:1px solid #dbe4eb;font-family:Matter,Arial,Helvetica,sans-serif;box-sizing:border-box;width:100%}
+header.site-header *{box-sizing:border-box}
+header.site-header .site-logo{display:block;flex-shrink:0;line-height:0}
+header.site-header .site-logo img{display:block;width:108px;height:auto;margin:0}
+header.site-header .site-tabs{display:flex;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none;margin:0;padding:0}
+header.site-header .site-tabs::-webkit-scrollbar{display:none}
+header.site-header .site-tabs a{flex-shrink:0;padding:9px 14px;border-radius:999px;font-size:14px;font-weight:700;line-height:1.2;color:#18354b;text-decoration:none;white-space:nowrap;background:none}
+header.site-header .site-tabs a:hover{background:#e6eff8}
+header.site-header .site-tabs a[aria-current=page]{background:#003c75;color:#fff}
+header.site-header .site-tabs a:focus-visible,header.site-header .site-logo:focus-visible{outline:2px solid #1668e3;outline-offset:2px}
+@media (max-width:820px){
+  header.site-header{flex-direction:column;align-items:stretch;gap:6px;padding:8px 12px 6px}
+  header.site-header .site-logo img{width:92px}
+  /* Kaikki kuusi välilehteä näkyvät kahdella rivillä, ei piilossa sivuttaisvierityksen takana. */
+  header.site-header .site-tabs{flex-wrap:wrap;overflow:visible;gap:4px 2px}
+  header.site-header .site-tabs a{padding:7px 10px;font-size:13px}
+}
+
+/* Sivuston omat sisältösivut (Näin se toimii, Ostoskori) */
+.site-body{margin:0;min-height:100vh;background:#f3f7f5;color:#18354b;font-family:Matter,Arial,Helvetica,sans-serif;font-synthesis:none}
+.site-body *{box-sizing:border-box}
+.site-main{max-width:920px;margin:0 auto;padding:36px 16px 56px}
+.site-eyebrow{margin:0;font-size:11px;font-weight:700;letter-spacing:2px;color:#1668e3}
+.site-title{font-family:National,Matter,Arial,sans-serif;font-weight:400;font-size:52px;line-height:.98;margin:12px 0;color:#003c75;text-transform:uppercase}
+.site-lead{margin:0 0 24px;max-width:620px;font-size:17px;line-height:1.6;color:#5f7283}
+.site-card{padding:24px;background:#fff;border:1px solid #dbe4eb;border-radius:18px}
+.site-card+.site-card{margin-top:16px}
+.site-card h2{margin:0 0 8px;font-size:21px;color:#003c75}
+.site-card p{margin:0;font-size:15px;line-height:1.6;color:#5f7283}
+.site-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.site-button{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:10px;background:#003c75;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.site-button.green{background:#1fa855}
+.site-button.ghost{background:#fff;color:#003c75;border:1px solid #c9d7e3}
+.site-button:focus-visible{outline:2px solid #1668e3;outline-offset:3px}
+.site-steps{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.site-steps li{display:flex;flex-direction:column;gap:8px;padding:16px;background:#fff;border:1px solid #dbe4eb;border-radius:16px}
+.site-steps .n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#003c75;color:#fff;font-weight:700;font-size:13px}
+.site-steps .n.wa{background:#25d366}
+.site-steps .n.ok{background:#1a7f37}
+.site-steps strong{font-size:15px}
+.site-steps span{font-size:13px;line-height:1.45;color:#5f7283}
+.site-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.site-grid .site-card+.site-card{margin-top:0}
+.site-list{margin:10px 0 0;padding-left:18px;font-size:15px;line-height:1.7;color:#5f7283}
+.site-note{margin-top:24px;font-size:13px;color:#5f7283}
+.site-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+@media (max-width:760px){
+  .site-title{font-size:40px}
+  .site-steps{grid-template-columns:1fr}
+  .site-grid{grid-template-columns:1fr}
+  .site-main{padding:24px 16px 40px}
+}
+
+/* Puhelimella (mobile-gate.js lisää html.is-phone-luokan jo <head>-osassa) Keskustele on WhatsAppissa: sen linkit pois,
+   ja itse Keskustele-sivulla ikkuna (html.phone-gate). Muut sivut toimivat puhelimella sellaisenaan. */
+html.is-phone a[href^="/keskustele"],html.is-phone .no-phone{display:none!important}
+html.phone-gate,html.phone-gate body{overflow:hidden!important}
+html.phone-gate body>*:not(.gate){visibility:hidden}
+.gate{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;padding:24px 20px;overflow-y:auto;
+  background:linear-gradient(165deg,#e6eff8 0%,#f3f7f5 70%);font-family:Matter,Arial,Helvetica,sans-serif;color:#18354b;text-align:center}
+.gate *{box-sizing:border-box}
+.gate-card{width:100%;max-width:380px}
+.gate-art{display:block;width:min(270px,76vw);height:auto;margin:0 auto 14px;overflow:visible}
+.gate h2{margin:0 0 12px;font-family:National,Matter,Arial,sans-serif;font-weight:400;font-size:42px;line-height:.98;text-transform:uppercase;color:#003c75}
+.gate p{margin:0 0 24px;font-size:16px;line-height:1.55;color:#5f7283}
+.gate-call{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 18px;border-radius:999px;background:#1fa855;color:#fff;
+  font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 10px 22px rgba(31,168,85,.3)}
+.gate-call svg{width:20px;height:20px;flex-shrink:0}
+.gate-home{display:block;margin-top:10px;padding:12px;color:#003c75;font-size:15px;font-weight:700}
+.gate-call:focus-visible,.gate-home:focus-visible{outline:2px solid #1668e3;outline-offset:3px}
+.gate-laptop{transform-box:fill-box;animation:gate-bob 3.2s ease-in-out infinite}
+.gate-bubble{transform-box:fill-box;transform-origin:20% 100%;animation:gate-pop 3.2s ease-in-out infinite}
+.gate-phone{transform-box:fill-box;transform-origin:50% 100%;animation:gate-tilt 3.2s ease-in-out infinite}
+@keyframes gate-bob{50%{transform:translateY(-5px)}}
+@keyframes gate-pop{0%,100%{transform:scale(1)}50%{transform:scale(1.08) rotate(-3deg)}}
+@keyframes gate-tilt{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg)}}
+@media (prefers-reduced-motion:reduce){.gate-laptop,.gate-bubble,.gate-phone{animation:none}}

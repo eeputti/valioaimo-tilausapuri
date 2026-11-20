@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#003c75">
+  <title>Näin se toimii | Aimo-tilausapuri</title>
+  <link rel="icon" href="/aimo-logo.png">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/mobile-gate.js"></script>
+  <link rel="stylesheet" href="/agent-code.css">
+  <link rel="stylesheet" href="/miten.css">
+  <script type="module" src="/miten.js"></script>
+</head>
+<body class="site-body">
+  <svg class="miten-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 8a7.5 7.5 0 1 0 .8 6.5M19 3.5V8h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <header class="site-header"><a class="site-logo" href="/" aria-label="Aimo-tilausapurin etusivu"><img src="/aimo-logo.png" alt="Valio Aimo" width="120" height="42"></a><nav class="site-tabs" aria-label="Sivut"><a href="/">Etusivu</a><a href="/keskustele">Keskustele</a><a href="/ostoskori">Ostoskori</a><a href="/miten" aria-current="page">Näin se toimii</a></nav></header>
+  <main class="site-main miten">
+    <h1 class="site-title">Näin agentti pörrää juteltaessa</h1>
+    <p class="site-lead no-phone">Juttele itse täältä:</p>
+    <a class="miten-cta" href="/keskustele">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Keskustele tilausapurin kanssa
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+
+    <section class="stack" aria-labelledby="stack-title">
+      <h2 id="stack-title">Mitä kaikkea käytetään, vaihe vaiheelta</h2>
+      <p class="miten-sub">Yksi tilaus kulkee näiden vaiheiden läpi ylhäältä alas. Jokaisessa vaiheessa lukee, mitä tapahtuu ja mitä palvelua tai tekniikkaa siinä käytetään.</p>
+      <ol class="stack-steps">
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">1</span>
+          <div class="stack-body">
+            <h3>Viesti tulee sisään</h3>
+            <p>Kokki kirjoittaa, puhuu ääniviestin, lähettää kuvan tai reseptilinkin WhatsAppissa. Keskustele-sivulla voi kirjoittaa. Viesti kuitataan heti, ja kokki näkee "kirjoittaa…". Jos kokki lähettää monta viestiä peräkkäin, apuri odottaa hetken ja vastaa niihin kaikkiin yhdellä kertaa.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>WhatsApp Cloud API (Metan virallinen rajapinta)</li><li>Webhook, jonka allekirjoitus tarkistetaan</li><li>Jono Turso-tietokannassa</li><li>Viestien niputus: 6 s viimeisestä viestistä, enintään 20 s</li><li>Keskustele-sivulta Cloudflare Worker välittää viestin samalle apurille</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">2</span>
+          <div class="stack-body">
+            <h3>Ääni, kuva ja reseptilinkki muutetaan tekstiksi</h3>
+            <p>WhatsAppissa ääniviesti litteroidaan suomeksi tekstiksi. Kuvasta (ostoslista, lähete tai hylly) luetaan tuoterivit ja määrät. Reseptilinkki avataan, ja siitä luetaan ainekset ja annosmäärä, jos sivu ei ole bottisuojan takana. Kuvan ja sivun teksti on vain tietoa: siinä olevia käskyjä ei noudateta.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Groq: Whisper large-v3 turbo -malli (ääni)</li><li>Claude Haiku 5.5, Anthropic (kuva)</li><li>Metan media-API (tiedoston lataus)</li><li>Oma linkinlukija: vain julkiset HTTPS-sivut</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">3</span>
+          <div class="stack-body">
+            <h3>Claude-agentti hoitaa keskustelun</h3>
+            <p>Claude lukee koko keskustelun ja vastaa kuin kokenut tukkumyyjä: lyhyesti ja yksi kysymys kerrallaan. Sillä on tarkistuslista: toimituspäivä, allergiat ja erityisruokavaliot, tuotteet, määrät ja lopuksi ostoskori. Järjestys on vapaa. Agentti tekee kaiken omilla työkaluillaan, eikä se saa keksiä tuotteita, hintoja eikä linkkejä. Koodi tarkistaa jokaisen vastauksen euromäärät työkalujen tiedoista, ja vastaus oikoluetaan ennen lähetystä.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Claude Opus 5.5, Anthropic (nopea tila)</li><li>13 omaa työkalua: päivä, ruokavalio, tuotehaku, kori, korilinkki, linkin luku ja palaute</li><li>Hintavartija: euromäärät vain työkalujen tiedoista</li><li>Oikoluku: Claude Sonnet 5.5</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">4</span>
+          <div class="stack-body">
+            <h3>Tuotteet haetaan ja valitaan</h3>
+            <p>Haku etsii Valion valikoimasta vain tuotteet, jotka ehtivät valitulle toimituspäivälle. Allergeenit ja merkinnät tarkistetaan Valion tuotetiedoista. Apuri valitsee käyttöön sopivimman tuotteen ja pakkauksen, josta jää vähiten hävikkiä, ja kertoo, että minkä tahansa voi vaihtaa. Laktoositonta, gluteenitonta tai muuta erityistuotetta se valitsee vain, kun kokki on kertonut tarpeen.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Valion tuotedata: 17 546 tuotetta</li><li>Allergeenit, ainesosat, alkuperä, hiilijalanjälki ja toimitusvarmuus</li><li>Oma tuotehaku palvelimella</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">5</span>
+          <div class="stack-body">
+            <h3>Hinnat ja saatavuus</h3>
+            <p>Valion testirajapinta on suljettu, joten apuri käyttää viimeisimpiä Valiolta saatuja oikeita hintoja ja saatavuuksia. Niitä on noin 900 tuotteelle 17 546:sta. Hintaa ei arvioida eikä keksitä: jos tuotteelle ei ole hintaa, apuri kertoo sen ja ehdottaa korvaajaa.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Viimeisimmät tunnetut Valion hinnat ja saatavuudet</li><li>Välimuisti tietokannassa</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">6</span>
+          <div class="stack-body">
+            <h3>Ostoskori</h3>
+            <p>Kun lista on valmis, kokki saa WhatsAppiin korin tuotteet hintoineen ja henkilökohtaisen linkin ostoskoriin, joka näyttää Valio Aimon Toimitustukun korilta. Linkki on allekirjoitettu ja sidottu kokin puhelinnumeroon ja tähän koriin, ja se vanhenee vuorokaudessa. Kori ja WhatsApp ovat samaa luonnosta. Siirry maksamaan -nappi tekee tilauksen ja avaa maksun.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Allekirjoitettu korilinkki, sidottu puhelinnumeroon</li><li>Sama luonnos WhatsAppissa ja korissa</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">7</span>
+          <div class="stack-body">
+            <h3>Tarjous ja tilaus agenttiportin kautta</h3>
+            <p>Agenttiportti lukitsee tuotteet ja hinnat allekirjoitettuun tarjoukseen. Ostovaltuus tarkistaa euromäärärajat, allergeenit ja korvaukset: tilaus menee läpi tai jää ihmisen hyväksyttäväksi. Jokainen päätös kirjataan lokiin, jota ei voi muuttaa jälkikäteen.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Oma agenttiportti: /v1/quotes ja /v1/orders</li><li>Ed25519-allekirjoitus</li><li>Ostovaltuus (mandaatti)</li><li>Hash-ketjutettu päätösloki</li><li>Sama portti REST- ja MCP-rajapintana paikallisessa ajossa (npm start)</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">8</span>
+          <div class="stack-body">
+            <h3>Maksu ja kiitosviesti</h3>
+            <p>Vahvistettu tilaus siirtyy tälle sivustolle. Demomaksu, omat tilaukset ja agentin jälki näkyvät täällä. Kun demomaksu hyväksytään, kokki saa WhatsAppiin kiitosviestin, jossa on tilausnumero ja toimituspäivä. Rahaa ei veloiteta.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Cloudflare Workers</li><li>Cloudflare D1 -tietokanta</li><li>WhatsApp-kiitosviesti maksun jälkeen</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">9</span>
+          <div class="stack-body">
+            <h3>Missä tämä pyörii</h3>
+            <p>Apuri pyörii pilvessä: botti Vercelissä Frankfurtissa ja tietokannat Tursossa. Ajastin käy minuutin välein ja hoitaa kesken jääneet viestit ja tilausten siirron. Tämä sivusto on Cloudflaressa.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Node.js</li><li>Vercel Functions (Frankfurt)</li><li>Turso: SQLite pilvessä</li><li>Cloudflare Workers ja D1</li></ul>
+          </div>
+        </li>
+        <li class="stack-step">
+          <span class="stack-no" aria-hidden="true">10</span>
+          <div class="stack-body">
+            <h3>Miten tämä tehtiin</h3>
+            <p>Koodin kirjoittivat tekoälyavustajat rinnakkain, ja jokainen vaihe tallennettiin GitHubiin. Laatua mitattiin keskusteluttamalla apuria satojen simuloitujen asiakkaiden kanssa sekä oikeista keskusteluista tehdyillä testeillä.</p>
+            <ul class="stack-tools" aria-label="Käytetään"><li>Claude Code</li><li>OpenAI Codex</li><li>GitHub</li><li>Simuloidut asiakkaat Claude-mallilla</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="koodi" class="miten-code" aria-labelledby="code-title">
+      <h2 id="code-title">Agentin ajo, rivi riviltä</h2>
+      <p class="miten-sub">Esimerkki oikeasta demotilauksesta. Keskustele-sivulla sama näkymä päivittyy omasta keskustelustasi.</p>
+      <figure id="code" class="code" hidden>
+        <div class="code-bar">
+          <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span id="code-file" class="code-file">tilausapuri/esimerkki.js</span>
+          <span id="code-state" class="code-state">VALMIS</span>
+          <button id="code-replay" class="code-replay" type="button" aria-label="Toista koodin kirjoitus alusta"><svg aria-hidden="true"><use href="#i-refresh"/></svg></button>
+        </div>
+        <ol id="code-lines" class="code-lines" aria-label="Agentin kutsut esimerkkitilauksen aikana"></ol>
+      </figure>
+      <p id="status" class="miten-status" role="status" aria-live="polite">Haetaan esimerkkiä…</p>
+
+      <ol class="legend" aria-label="Mitä rivit tarkoittavat">
+        <li><code><span class="t-obj">whatsapp</span>.<span class="t-fn">vastaanota</span>()</code><span>Kokin viestit WhatsAppista tai Keskustele-sivulta.</span></li>
+        <li><code><span class="t-obj">tulkki</span>.<span class="t-fn">ymmärrä</span>()</code><span>Claude lukee keskustelun ja poimii tuotteet, määrät, päivän ja ruokavalion. Puuttuvat se kysyy.</span></li>
+        <li><code><span class="t-obj">tuotteet</span>.<span class="t-fn">hae</span>()</code><span>Vain toimituspäivälle tilattavat tuotteet. Apuri valitsee sopivimman, ja kokki voi vaihtaa.</span></li>
+        <li><code><span class="t-obj">valio</span>.<span class="t-fn">post</span>()</code><span>Hinnat ja saatavuus Valiolta. Rivi kertoo, onko hinta suoraan rajapinnasta vai viimeisin tunnettu.</span></li>
+        <li><code><span class="t-obj">portti</span>.<span class="t-fn">post</span>(<span class="t-str">"/v1/quotes"</span>)</code><span>Allekirjoitettu tarjous lukitsee tuotteet ja hinnat.</span></li>
+        <li><code><span class="t-obj">portti</span>.<span class="t-fn">post</span>(<span class="t-str">"/v1/orders"</span>)</code><span>Ostovaltuus ja päätösketju. Vasta sitten tilaus kirjataan.</span></li>
+      </ol>
+      <a class="miten-more" href="/agentti#esimerkki">Katso esimerkkitilauksen koko jälki</a>
+    </section>
+    <p class="site-note">Demo: tilaukset eivät ole oikeita Valio-tilauksia eikä maksu veloita rahaa.</p>
+  </main>
+</body>
+</html>

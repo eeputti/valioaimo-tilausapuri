@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#003c75">
+  <title>Keskustele | Aimo-tilausapuri</title>
+  <link rel="icon" href="/aimo-logo.png">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/mobile-gate.js"></script>
+  <link rel="stylesheet" href="/agent-code.css">
+  <link rel="stylesheet" href="/keskustele.css">
+  <script type="module" src="/keskustele-live.js"></script>
+  <script type="module" src="/keskustele.js"></script>
+</head>
+<body class="site-body chat-page">
+  <header class="site-header"><a class="site-logo" href="/" aria-label="Aimo-tilausapurin etusivu"><img src="/aimo-logo.png" alt="Valio Aimo" width="120" height="42"></a><nav class="site-tabs" aria-label="Sivut"><a href="/">Etusivu</a><a href="/keskustele" aria-current="page">Keskustele</a><a href="/ostoskori">Ostoskori</a><a href="/miten">Näin se toimii</a></nav></header>
+
+  <div class="chat-stage">
+  <main class="phone" aria-label="Keskustelu tilausapurin kanssa">
+   <div class="screen">
+    <div class="phone-status" aria-hidden="true"><span id="clock" class="phone-time"></span><span class="phone-island"></span><span class="phone-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.5 1.5a4.4 4.4 0 0 0-6.2 0zM1 4.4a9.9 9.9 0 0 1 14 0L13.5 6a7.8 7.8 0 0 0-11 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><path d="M25 4v4c.8-.3 1.3-1.1 1.3-2S25.8 4.3 25 4z" opacity=".45"/></svg></span></div>
+    <div class="wa-top">
+      <span class="avatar"><img src="/aimo-logo.png" alt="" width="40" height="40"></span>
+      <div class="who"><strong>Aimo-tilausapuri</strong><span id="presence">verkossa</span></div>
+      <a class="wa-cart" href="/ostoskori" aria-label="Avaa ostoskori"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 7H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span>Ostoskori</span></a>
+      <button id="reset" class="wa-reset" type="button" aria-label="Aloita alusta uudella ostoskorilla" title="Aloita alusta uudella ostoskorilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 8a7.5 7.5 0 1 0 .8 6.5M19 3.5V8h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+
+    <div id="log" class="wa-log" role="log" aria-live="polite" aria-relevant="additions">
+      <p class="wa-day">Tänään</p>
+      <div class="wa-notice">Selainkokeilu: sama tilausapuri kuin WhatsAppissa. Tilaukset ovat demoja, rahaa ei liiku. Älä kirjoita henkilötietoja, sillä keskustelu voi näkyä demon tilausnäkymässä.<a class="notice-wa" href="/#whatsapp">Kokeile WhatsAppissa täältä</a></div>
+    </div>
+
+    <div id="offline" class="wa-offline" hidden role="status"></div>
+
+    <form id="composer" class="wa-composer" autocomplete="off">
+      <label for="text" class="sr-only">Viesti</label>
+      <textarea id="text" rows="1" maxlength="2000" placeholder="Kirjoita viesti" enterkeyhint="send"></textarea>
+      <button id="send" type="submit" aria-label="Lähetä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5 21 12 3.5 3.5l2.6 7.2L15 12l-8.9 1.3z" fill="currentColor"/></svg></button>
+    </form>
+    <div class="phone-home" aria-hidden="true"></div>
+   </div>
+  </main>
+
+  <aside class="chat-aside" aria-label="Oikea WhatsApp ja agentin live-näkymä">
+    <div class="aside-wa">
+      <span class="aside-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3.5A12.4 12.4 0 0 0 5.3 22.2L3.6 28.4l6.4-1.7A12.4 12.4 0 1 0 16 3.5Z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M11.6 9.6c.4 0 .8 0 1 .6l1.2 2.8c.1.3 0 .6-.1.9l-.8 1c-.2.2-.2.5 0 .8.7 1.2 2.2 2.8 3.9 3.6.3.1.6.1.8-.1l1-1.2c.2-.3.5-.3.8-.2l2.7 1.3c.3.1.5.4.5.7 0 1.4-1.3 2.6-2.7 2.6-4.6-.4-9.3-4.9-9.7-9.6 0-1.4 1-3.2 1.4-3.2Z" fill="#fff"/></svg></span>
+      <div class="aside-text">
+        <h2 id="aside-title">Kokeile oikeassa WhatsAppissa</h2>
+        <p>Sama tilausapuri toimii omalla puhelimellasi.</p>
+      </div>
+      <ul class="aside-features" aria-label="WhatsAppissa lisäksi">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><strong>Ääniviestit:</strong> apuri litteroi puheen ja ymmärtää tilauksen.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 13 4-4m-6 6-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0m2 2 1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><strong>Reseptilinkit:</strong> apuri lukee ainekset ja määrät, jos sivu ei ole bottisuojan takana.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.8-2.5h6.4L17 8h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.3" fill="none" stroke="currentColor" stroke-width="2"/></svg><span><strong>Kuvat:</strong> ostoslista, lähete tai hylly tuoteriveiksi.</span></li>
+      </ul>
+      <a class="aside-button" href="/#whatsapp">Kokeile WhatsAppissa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <figure id="live" class="code live" aria-labelledby="live-title">
+      <div class="code-bar">
+        <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span id="live-title" class="code-file">keskustelusi.js</span>
+        <span class="code-help">Mitä nämä tarkoittavat? <a href="/miten#koodi">Katso, miten agentti toimii</a></span>
+        <span id="live-state" class="code-state idle">ODOTTAA</span>
+      </div>
+      <div id="live-scroll" class="live-scroll">
+        <ol id="live-lines" class="code-lines" aria-label="Mitä agentti ymmärsi keskustelustasi. Päivittyy jokaisen viestin jälkeen."></ol>
+      </div>
+    </figure>
+  </aside>
+  </div>
+</body>
+</html>

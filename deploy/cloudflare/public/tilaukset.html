@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003c75">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Demotilaukset | Aimo-demo</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/mobile-gate.js"></script>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="site-header"><a class="site-logo" href="/" aria-label="Aimo-tilausapurin etusivu"><img src="/aimo-logo.png" alt="Valio Aimo" width="120" height="42"></a><nav class="site-tabs" aria-label="Sivut"><a href="/">Etusivu</a><a href="/keskustele">Keskustele</a><a href="/ostoskori">Ostoskori</a><a href="/miten">Näin se toimii</a></nav></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">TILAUSAPURI</p><h1>WhatsAppista<br><span>tilaukseksi.</span></h1><p class="lead">Lähetä viesti. Tarkista ehdotus. Vahvista tilaus.<br>Omat tilauksesi näkyvät täällä vain sinulle.</p></div>
+      <div class="connection" role="status" aria-live="polite"><span id="connection-dot" class="dot"></span><div><strong id="connection-title">Tarkistetaan yhteyttä</strong><p id="connection-detail">Haetaan tilausten viimeisintä tilaa…</p></div></div></div>
+    <section class="orders-section" aria-labelledby="orders-title"><div class="section-heading"><div><p class="eyebrow">TESTIKEITTIÖ</p><h2 id="orders-title">Omat demotilaukset</h2><p id="order-count">Hetkinen…</p></div></div>
+      <div class="filters" role="group" aria-label="Tilausten kanava"><button type="button" data-filter="all" aria-pressed="true">Kaikki</button><button type="button" data-filter="whatsapp" aria-pressed="false">WhatsApp</button><button type="button" data-filter="browser-demo" aria-pressed="false">Selaindemo</button></div>
+      <div id="orders" aria-live="polite" aria-atomic="false"><div class="empty"><div class="empty-icon" aria-hidden="true">↘</div><h3>Haetaan tilauksia</h3><p>Tämän selaimen tilaukset ilmestyvät tähän.</p></div></div>
+    </section>
+    <aside class="demo-note"><strong>Tämä on tilaus- ja maksudemo.</strong> Tilaukset kirjautuvat tilausapurin omaan tilauskantaan, ja kukin näkee vain omansa. Voit kokeilla maksamista, kun tilauksella on demomaksulinkki. Rahaa ei veloiteta eikä tavarantoimitusta käynnistetä.</aside>
+  </main>
+  <footer><span>Aimo, Tilausapuri</span><span>Päivittyy automaattisesti</span></footer>
+</body>
+</html>
